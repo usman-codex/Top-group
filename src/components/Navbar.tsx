@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Building2, Globe, Cpu, ArrowRight, ShieldCheck, Mail, Phone } from 'lucide-react';
 import { COMPANIES, CAPABILITIES } from '../data/mockData';
 import { TopGroupLogo } from './TopGroupLogo';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -112,9 +113,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                               : 'bg-slate-50 hover:bg-blue-50/70 border-slate-100 hover:border-[#1B365D]/40'
                           }`}
                         >
-                          {/* Clean Brand Logo Badge */}
-                          <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${comp.logoBg} flex items-center justify-center text-xs font-black text-white shrink-0 shadow-sm relative group-hover:scale-105 transition-transform`}>
-                            {comp.logoText.length <= 3 ? comp.logoText : comp.logoText.substring(0, 2)}
+                          {/* Official Brand Logo Badge */}
+                          <div className="relative shrink-0 group-hover:scale-105 transition-transform">
+                            <BrandLogo id={comp.slug} size="sm" className="w-10 h-10 border border-slate-200/80 bg-white shadow-xs p-1 rounded-xl" />
                             {isPakCis && (
                               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white animate-ping" />
                             )}
