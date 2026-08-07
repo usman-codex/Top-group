@@ -10,8 +10,29 @@ interface CompanyDetailModalProps {
   onOpenContact: () => void;
 }
 
+const INDUSTRY_FALLBACK_IMAGES: Record<string, string> = {
+  'pakcis-trade': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200',
+  'travel-operations': 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200',
+  'chicken-charco': 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1200',
+  'fintech-edge-institute': 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200',
+  'psa-uzbekistan': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&q=80&w=1200',
+  'vades-group': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+  'artel-services': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+  'metro-city-lab': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200',
+};
+
 export const CompanyDetailModal: React.FC<CompanyDetailModalProps> = ({ company, onClose, onOpenContact }) => {
   if (!company) return null;
+
+  const [coverSrc, setCoverSrc] = React.useState<string>(
+    company.coverImage || INDUSTRY_FALLBACK_IMAGES[company.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200'
+  );
+
+  React.useEffect(() => {
+    if (company) {
+      setCoverSrc(company.coverImage || INDUSTRY_FALLBACK_IMAGES[company.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200');
+    }
+  }, [company]);
 
   return (
     <AnimatePresence>
@@ -35,8 +56,14 @@ export const CompanyDetailModal: React.FC<CompanyDetailModalProps> = ({ company,
           {/* Banner Header */}
           <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100">
             <img 
-              src={company.coverImage} 
+              src={coverSrc} 
               alt={company.name}
+              onError={() => {
+                const fallback = INDUSTRY_FALLBACK_IMAGES[company.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200';
+                if (coverSrc !== fallback) {
+                  setCoverSrc(fallback);
+                }
+              }}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

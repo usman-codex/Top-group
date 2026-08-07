@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 
 import { TopGroupLogo } from './TopGroupLogo';
+import { BrandLogo } from './BrandLogo';
 
 // Company Logo Images
 import vadesLogo from '../assets/images/company-logos/vades-logo.png';
@@ -158,39 +159,44 @@ export const CompanyStats: React.FC = () => {
  const companyLogos = [
    {
     name: 'Pakcis Trade',
+    slug: 'pakcis-trade',
     image: pakcisTradeLogo
   },
   {
     name: 'Travel Operations',
+    slug: 'travel-operations',
     image: travelOperationsLogo
   },
    {
     name: 'Chicken Charco',
+    slug: 'chicken-charco',
     image: chickenCharcoLogo
   },
    {
     name: 'FinTech Edge Institute',
+    slug: 'fintech-edge-institute',
     image: fintechEdgeLogo
   },
   {
-  
     name: 'Vades Group',
+    slug: 'vades-group',
     image: vadesLogo
   },
   {
     name: 'Artel Services',
+    slug: 'artel-services',
     image: artelLogo
   },
- 
   {
-    name: 'Uzbekistan',
+    name: 'PSA Uzbekistan Airways',
+    slug: 'psa-uzbekistan',
     image: uzbekistanLogo
   },
   {
-    name: 'Metrolab',
+    name: 'Metro City Lab',
+    slug: 'metro-city-lab',
     image: metrolabLogo
   }
-
 ];
 
   return (
@@ -447,21 +453,8 @@ export const CompanyStats: React.FC = () => {
         group
       "
     >
-      <div className="w-[170px] h-[80px] flex items-center justify-center">
-        <img
-          src={company.image}
-          alt={company.name}
-          title={company.name}
-          className="
-            w-full
-            h-full
-            object-contain
-            object-center
-            transition-transform
-            duration-300
-            group-hover:scale-105
-          "
-        />
+      <div className="flex items-center justify-center">
+        <BrandLogo id={company.slug} size="lg" />
       </div>
     </motion.div>
   ))}
