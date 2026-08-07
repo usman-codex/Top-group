@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import heroBgImage from '../assets/images/top_group_hero_banner_1786128739698.jpg';
-import fallbackHeroImg from '../assets/images/hero_trade_bg_1785836814950.jpg';
+import heroBgImage from '../assets/images/topgroup-img.jpeg';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -13,25 +12,16 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenContact,
   onNavigateSection,
 }) => {
-  const [imgSrc, setImgSrc] = useState(heroBgImage);
-
   return (
     <section id="hero" className="w-full bg-white">
 
  
-<div className="w-full bg-white pt-[85px] overflow-hidden">
+<div className="w-full bg-white pt-[85px]">
   <img
-    src={imgSrc}
+    src={heroBgImage}
     alt="TOP GROUP Global Logistics & Trade Network"
-    className="w-full h-auto block object-cover max-h-[520px]"
+    className="w-full h-auto block object-contain"
     referrerPolicy="no-referrer"
-    onError={() => {
-      if (imgSrc !== fallbackHeroImg) {
-        setImgSrc(fallbackHeroImg);
-      } else {
-        setImgSrc('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000');
-      }
-    }}
   />
 </div>
 
