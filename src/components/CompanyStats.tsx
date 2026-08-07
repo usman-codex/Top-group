@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 
 import { TopGroupLogo } from './TopGroupLogo';
-import { BrandLogo } from './BrandLogo';
 
 // Company Logo Images
 import vadesLogo from '../assets/images/company-logos/vades-logo.png';
@@ -159,44 +158,39 @@ export const CompanyStats: React.FC = () => {
  const companyLogos = [
    {
     name: 'Pakcis Trade',
-    slug: 'pakcis-trade',
     image: pakcisTradeLogo
   },
   {
     name: 'Travel Operations',
-    slug: 'travel-operations',
     image: travelOperationsLogo
   },
    {
     name: 'Chicken Charco',
-    slug: 'chicken-charco',
     image: chickenCharcoLogo
   },
    {
     name: 'FinTech Edge Institute',
-    slug: 'fintech-edge-institute',
     image: fintechEdgeLogo
   },
   {
+  
     name: 'Vades Group',
-    slug: 'vades-group',
     image: vadesLogo
   },
   {
     name: 'Artel Services',
-    slug: 'artel-services',
     image: artelLogo
   },
+ 
   {
-    name: 'PSA Uzbekistan Airways',
-    slug: 'psa-uzbekistan',
+    name: 'Uzbekistan',
     image: uzbekistanLogo
   },
   {
-    name: 'Metro City Lab',
-    slug: 'metro-city-lab',
+    name: 'Metrolab',
     image: metrolabLogo
   }
+
 ];
 
   return (
@@ -364,67 +358,6 @@ export const CompanyStats: React.FC = () => {
               LOGO GRID
           ===================================== */}
 
-          {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-
-            {companyLogos.map((company, index) => (
-
-              <motion.div
-                key={company.name}
-                initial={{
-                  opacity: 0,
-                  y: 15
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0
-                }}
-                viewport={{
-                  once: false
-                }}
-                transition={{
-                  delay: index * 0.08,
-                  duration: 0.5
-                }}
-                className="
-                  h-24
-                  rounded-2xl
-                  bg-slate-50
-                  border
-                  border-slate-200
-                  hover:border-[#FF6B00]/50
-                  hover:bg-white
-                  hover:shadow-lg
-                  transition-all
-                  duration-300
-                  flex
-                  items-center
-                  justify-center
-                  p-4
-                  group
-                "
-              >
-
-                <img
-                  src={company.image}
-                  alt={company.name}
-                  title={company.name}
-                  className="
-                    max-w-[140px]
-                    max-h-[65px]
-                    w-auto
-                    h-auto
-                    object-contain
-                    transition-transform
-                    duration-300
-                    group-hover:scale-110
-                  "
-                />
-
-              </motion.div>
-
-            ))}
-
-          </div> */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
   {companyLogos.map((company, index) => (
     <motion.div
@@ -453,8 +386,21 @@ export const CompanyStats: React.FC = () => {
         group
       "
     >
-      <div className="flex items-center justify-center">
-        <BrandLogo id={company.slug} size="lg" />
+      <div className="w-[170px] h-[80px] flex items-center justify-center">
+        <img
+          src={company.image}
+          alt={company.name}
+          title={company.name}
+          className="
+            w-full
+            h-full
+            object-contain
+            object-center
+            transition-transform
+            duration-300
+            group-hover:scale-105
+          "
+        />
       </div>
     </motion.div>
   ))}

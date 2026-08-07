@@ -15,34 +15,17 @@ interface CompanyCardItemProps {
   onSelectCompany: (id: string) => void;
 }
 
-const INDUSTRY_FALLBACK_IMAGES: Record<string, string> = {
-  'pakcis-trade': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000',
-  'travel-operations': 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1000',
-  'chicken-charco': 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1000',
-  'fintech-edge-institute': 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1000',
-  'psa-uzbekistan': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&q=80&w=1000',
-  'vades-group': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000',
-  'artel-services': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000',
-  'metro-city-lab': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000',
-};
-
 const CompanyCardItem: React.FC<CompanyCardItemProps> = ({ comp, index, onSelectCompany }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [videoFailed, setVideoFailed] = useState(false);
-  const [coverSrc, setCoverSrc] = useState<string>(
-    comp.coverImage || INDUSTRY_FALLBACK_IMAGES[comp.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000'
-  );
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    if (videoRef.current && !videoFailed) {
+    if (videoRef.current) {
       videoRef.current.currentTime = 0;
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          setVideoFailed(true);
-        });
+        playPromise.catch(() => {});
       }
     }
   };
@@ -51,13 +34,6 @@ const CompanyCardItem: React.FC<CompanyCardItemProps> = ({ comp, index, onSelect
     setIsHovered(false);
     if (videoRef.current) {
       videoRef.current.pause();
-    }
-  };
-
-  const handleCoverError = () => {
-    const fallback = INDUSTRY_FALLBACK_IMAGES[comp.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000';
-    if (coverSrc !== fallback) {
-      setCoverSrc(fallback);
     }
   };
 
@@ -79,16 +55,15 @@ const CompanyCardItem: React.FC<CompanyCardItemProps> = ({ comp, index, onSelect
         <div className="relative aspect-[16/9] overflow-hidden bg-slate-950 border-b border-slate-100">
           {/* Cover Image */}
           <img 
-            src={coverSrc} 
+            src={comp.coverImage} 
             alt={comp.name}
-            onError={handleCoverError}
             className={`w-full h-full object-cover transition-all duration-500 ${
-              isHovered && !videoFailed ? 'opacity-0 scale-105' : 'opacity-95 group-hover:opacity-100 scale-100'
+              isHovered ? 'opacity-0 scale-105' : 'opacity-95 group-hover:opacity-100 scale-100'
             }`}
           />
 
           {/* Video element - plays on hover */}
-          {comp.videoUrl && !videoFailed && (
+          {comp.videoUrl && (
             <video
               ref={videoRef}
               src={comp.videoUrl}
@@ -96,7 +71,6 @@ const CompanyCardItem: React.FC<CompanyCardItemProps> = ({ comp, index, onSelect
               loop
               playsInline
               preload="auto"
-              onError={() => setVideoFailed(true)}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                 isHovered ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0'
               }`}
@@ -276,4 +250,3 @@ export const CompaniesGrid: React.FC<CompaniesGridProps> = ({ onSelectCompany })
     </section>
   );
 };
-
