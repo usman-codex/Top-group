@@ -100,6 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
 
                     {COMPANIES.slice(0, 6).map((comp) => {
                       const isPakCis = comp.slug === 'pakcis-trade' || comp.id === '1';
+                      const isFintech = comp.slug === 'fintech-edge-institute' || comp.id === '5';
                       return (
                         <div
                           key={comp.id}
@@ -108,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                             setActiveDropdown(null);
                           }}
                           className={`p-3 rounded-xl transition-all cursor-pointer flex items-start gap-3 group shadow-2xs hover:shadow-md border ${
-                            isPakCis 
+                            isPakCis || isFintech
                               ? 'bg-gradient-to-r from-blue-50/90 to-orange-50/80 border-orange-200/90 hover:border-[#FF6B00]' 
                               : 'bg-slate-50 hover:bg-blue-50/70 border-slate-100 hover:border-[#1B365D]/40'
                           }`}
@@ -116,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                           {/* Official Brand Logo Badge */}
                           <div className="relative shrink-0 group-hover:scale-105 transition-transform">
                             <BrandLogo id={comp.slug} size="sm" className="w-10 h-10 border border-slate-200/80 bg-white shadow-xs p-1 rounded-xl" />
-                            {isPakCis && (
+                            {(isPakCis || isFintech) && (
                               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white animate-ping" />
                             )}
                           </div>
@@ -129,6 +130,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                               {isPakCis && (
                                 <span className="text-[9px] font-extrabold text-white bg-[#FF6B00] px-1.5 py-0.5 rounded-md uppercase tracking-wider shrink-0 shadow-2xs">
                                   B2B Hub
+                                </span>
+                              )}
+                              {isFintech && (
+                                <span className="text-[9px] font-extrabold text-white bg-blue-700 px-1.5 py-0.5 rounded-md uppercase tracking-wider shrink-0 shadow-2xs">
+                                  EdTech
                                 </span>
                               )}
                             </div>

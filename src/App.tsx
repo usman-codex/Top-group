@@ -9,6 +9,7 @@ import { AboutPage } from './components/AboutPage';
 import { MediaEventsPage } from './components/MediaEventsPage';
 import { ResourcesPage } from './components/ResourcesPage';
 import { PakCisTradePage } from './components/PakCisTradePage';
+import { FintechEdgePage } from './components/FintechEdgePage';
 import { WhyTopGroup } from './components/WhyTopGroup';
 import { CompaniesGrid } from './components/CompaniesGrid';
 import { CompanyDetailModal } from './components/CompanyDetailModal';
@@ -33,7 +34,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -60,6 +61,11 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (companyId === '5' || companyId === 'fintech-edge-institute' || companyId === 'fintech-edge' || companyId === 'fintech') {
+      setCurrentView('fintech-edge');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const comp = COMPANIES.find(c => c.id === companyId || c.slug === companyId);
     if (comp) {
       setSelectedCompany(comp);
@@ -69,6 +75,12 @@ export default function App() {
   const handleNavigateSection = (sectionId: string) => {
     if (sectionId === 'pakcis-trade' || sectionId === 'pakcis' || sectionId === '1') {
       setCurrentView('pakcis-trade');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'fintech-edge' || sectionId === 'fintech-edge-institute' || sectionId === 'fintech' || sectionId === '5') {
+      setCurrentView('fintech-edge');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -154,6 +166,16 @@ export default function App() {
         />
       ) : currentView === 'pakcis-trade' ? (
         <PakCisTradePage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onOpenVideo={() => setVideoOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'fintech-edge' ? (
+        <FintechEdgePage
           onBackToHome={() => {
             setCurrentView('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
