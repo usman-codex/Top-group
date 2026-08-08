@@ -95,7 +95,7 @@ export const COMPANIES: Company[] = [
   {
     id: '4',
     slug: 'psa-uzbekistan',
-    name: 'PSA for Uzbekistan Airways',
+    name: 'PSA for Uzbekistan',
     tagline: 'Passenger & Passenger Sales General Agency',
     description: 'Authorized Passenger Sales Agency (PSA) and General Sales & Service Agent for Uzbekistan Airways, managing ticket distribution, passenger charters, and flight operations.',
     longDescription: 'PSA for Uzbekistan Airways serves as an essential commercial aviation partner, delivering seamless ticket reservation networks, international travel agency partnerships, passenger charter flights, and regional flight management services.',
