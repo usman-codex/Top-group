@@ -405,14 +405,6 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
                   <span>View Live Platform</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
-
-                <button
-                  onClick={() => setAppointmentOpen(true)}
-                  className="px-6 py-3.5 rounded-xl font-extrabold text-sm text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4 text-orange-400" />
-                  <span>Book 1-on-1 Consultation</span>
-                </button>
               </div>
 
               {/* Quick Metrics Ribbon */}
@@ -485,16 +477,6 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
                   <p className="text-xs text-slate-300 leading-relaxed">
                     Offering self-paced bundles, 1-on-1 mentorship, live code review labs, and accredited blockchain certifications.
                   </p>
-
-                  <a
-                    href="https://fintechedgeinstitute.ezycourse.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-extrabold text-xs flex items-center justify-center gap-2 transition-all shadow-md"
-                  >
-                    <span>Visit Official LMS (ezycourse)</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
                 </div>
               </div>
             </motion.div>
@@ -812,63 +794,6 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
                 </div>
               );
             })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 8. Newsletter Capture & Final CTA */}
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-          
-          <div className="space-y-4 max-w-2xl mx-auto">
-            <span className="px-3.5 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-400 text-xs font-extrabold uppercase tracking-widest">
-              Join Our Global FinTech Community
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black font-heading tracking-tight">
-              Ready to Advance Your <span className="text-[#FF6B00]">FinTech Career?</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-300">
-              Subscribe to our weekly Web3 & FinTech newsletter or visit our live ezycourse learning platform today.
-            </p>
-          </div>
-
-          {/* Newsletter Form */}
-          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex items-center gap-2">
-            <input
-              type="email"
-              required
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              placeholder="Enter your email address..."
-              className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-[#FF6B00]"
-            />
-            <button
-              type="submit"
-              className="px-5 py-3 rounded-xl bg-[#FF6B00] hover:bg-orange-600 text-white font-extrabold text-xs sm:text-sm shrink-0 transition-all flex items-center gap-1.5"
-            >
-              <span>Subscribe</span>
-              <Send className="w-3.5 h-3.5" />
-            </button>
-          </form>
-
-          {newsletterSubscribed && (
-            <div className="text-xs text-emerald-400 font-bold animate-pulse">
-              ✓ Thank you! You have successfully subscribed to FinTech Edge updates.
-            </div>
-          )}
-
-          {/* External Platform Link */}
-          <div className="pt-6 flex justify-center">
-            <a
-              href="https://fintechedgeinstitute.ezycourse.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-sm flex items-center gap-2 shadow-xl hover:scale-105 transition-all"
-            >
-              <span>Explore Live Platform (ezycourse.com)</span>
-              <ExternalLink className="w-4 h-4 text-[#FF6B00]" />
-            </a>
           </div>
 
         </div>
