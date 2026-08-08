@@ -332,21 +332,15 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mb-12"
           >
-            <button
-              onClick={() => setRfqModalOpen(true)}
+            <a
+              href="https://www.pakcistrade.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-extrabold text-sm shadow-xl hover:shadow-orange-500/30 transition-all cursor-pointer flex items-center justify-center gap-2 group"
             >
-              <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span>Submit B2B Trade RFQ</span>
-            </button>
-
-            <button
-              onClick={() => setVideoModalOpen(true)}
-              className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-md flex items-center justify-center gap-2 transition-all cursor-pointer"
-            >
-              <Play className="w-5 h-5 text-[#FF6B00] fill-[#FF6B00]" />
-              <span>Watch Corridor Video</span>
-            </button>
+              <span>Visit Site</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </motion.div>
 
           {/* Dual Headquarters Info Pill */}
@@ -503,13 +497,15 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
                   </div>
                 </div>
 
-                <button
-                  onClick={() => setRfqModalOpen(true)}
+                <a
+                  href="https://www.pakcistrade.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-3.5 rounded-xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-bold text-xs shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <Building2 className="w-4 h-4" />
-                  <span>Register as Verified Exporter</span>
-                </button>
+                  <span>Visit Site</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
 
               </div>
             </div>
@@ -676,162 +672,12 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
             })}
           </div>
 
-          {/* PakCisTrade Plus Banner CTA */}
-          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-slate-950 via-[#1B365D] to-slate-900 text-white shadow-2xl border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="space-y-2 max-w-2xl text-center lg:text-left">
-              <span className="inline-block text-[10px] font-extrabold uppercase text-[#FF6B00] bg-orange-500/20 px-3 py-1 rounded-full border border-orange-500/30">
-                PAKCISTRADE PLUS MEMBERSHIP
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                Unlock Up to Rs 5,000,000 Instant Trade Financing
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
-                Accelerate export liquidity with pre-approved working capital credit, 30% shipping discounts, priority RFQ placement, and dedicated trade account managers.
-              </p>
-            </div>
 
-            <button
-              onClick={() => setRfqModalOpen(true)}
-              className="px-8 py-4 rounded-2xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-extrabold text-xs shadow-xl transition-all cursor-pointer shrink-0 flex items-center gap-2"
-            >
-              <CreditCard className="w-4 h-4" />
-              <span>Apply for PakCisPlus Membership</span>
-            </button>
-          </div>
 
         </div>
       </section>
 
-      {/* 6. PRODUCTS & CATEGORIES TRADED */}
-      <section className="py-20 bg-white relative border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="inline-block text-xs font-extrabold text-[#FF6B00] uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 mb-4 shadow-xs">
-              TRADED PRODUCT CATEGORIES
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
-              High-Demand Export Sectors
-            </h2>
-            <p className="text-base text-slate-600 font-medium">
-              PakCisTrade facilitates wholesale B2B trade across key high-volume product verticals manufactured in Pakistan.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCategories.map((prod) => (
-              <div
-                key={prod.id}
-                className="bg-[#FFF6EE] rounded-3xl border border-orange-200/70 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Category Cover Image */}
-                  <div className="relative h-48 overflow-hidden bg-slate-900">
-                    <img
-                      src={prod.image}
-                      alt={prod.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-
-                    <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-extrabold text-white bg-[#FF6B00] px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
-                        {prod.badge}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Category Details */}
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-bold text-slate-900 font-heading group-hover:text-[#1B365D] transition-colors">
-                      {prod.title}
-                    </h3>
-
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                      {prod.subtitle}
-                    </p>
-
-                    {/* Sub-items list */}
-                    <div className="pt-2 space-y-1.5">
-                      {prod.items.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 font-semibold">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Action */}
-                <div className="p-6 pt-2 border-t border-orange-200/50">
-                  <button
-                    onClick={() => setRfqModalOpen(true)}
-                    className="w-full py-2.5 rounded-xl bg-white hover:bg-[#1B365D] text-[#1B365D] hover:text-white border border-slate-200 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-2xs"
-                  >
-                    <span>Request Category RFQ</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 7. TRADE CORRIDORS & OVERLAND ROUTES */}
-      <section className="py-20 bg-[#FFF8F2] relative border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="inline-block text-xs font-extrabold text-[#FF6B00] uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 mb-4 shadow-xs">
-              GEOGRAPHIC SPINES & ROUTES
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
-              Overland & Multimodal Trade Corridors
-            </h2>
-            <p className="text-base text-slate-600 font-medium">
-              Connecting Karachi ports and dry ports directly through Iran, CPEC, Afghanistan, and Caspian maritime lines to CIS markets.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tradeCorridors.map((corridor, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold text-[#FF6B00] bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
-                      {corridor.type}
-                    </span>
-                    <span className="text-[10px] font-bold text-slate-500">
-                      {corridor.transitTime}
-                    </span>
-                  </div>
-
-                  <h3 className="text-base font-bold text-slate-900 font-heading">
-                    {corridor.name}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed font-mono bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                    {corridor.route}
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-bold text-emerald-700">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>{corridor.status}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
       {/* 8. FREQUENTLY ASKED QUESTIONS */}
       <section className="py-20 bg-white relative border-t border-slate-200/80">
@@ -886,40 +732,7 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
         </div>
       </section>
 
-      {/* 9. BOTTOM CTA BANNER */}
-      <section className="py-16 bg-gradient-to-r from-slate-950 via-[#1B365D] to-slate-950 text-white relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <span className="inline-block text-xs font-extrabold text-[#FF6B00] uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/30">
-            START EXPORTING TO EURASIA TODAY
-          </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-            Expand Your Factory Orders Across CIS Markets
-          </h2>
-
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-medium">
-            Join over 10,000+ verified businesses trading securely across the Pakistan–CIS corridor with escrow protection and zero logistics stress.
-          </p>
-
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => setRfqModalOpen(true)}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-extrabold text-sm shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2"
-            >
-              <Building2 className="w-5 h-5" />
-              <span>Register Factory / Exporter</span>
-            </button>
-
-            <button
-              onClick={onOpenContact}
-              className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <Mail className="w-5 h-5" />
-              <span>Contact Trade Desk</span>
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* B2B RFQ MODAL */}
       <AnimatePresence>
