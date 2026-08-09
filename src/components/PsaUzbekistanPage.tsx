@@ -199,13 +199,15 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
 
             {/* CTA Action Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
-                onClick={onOpenContact}
+              <a
+                href="https://www.traveloperations.pk/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#FF6B00] to-orange-500 hover:from-orange-600 hover:to-orange-500 shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.02] flex items-center gap-2 cursor-pointer"
               >
                 <span>Book Flights & Visas</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -351,13 +353,15 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
             </p>
 
             <div className="pt-2">
-              <button
-                onClick={onOpenContact}
-                className="px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#1B365D] hover:bg-[#FF6B00] transition-colors shadow-md flex items-center gap-2 cursor-pointer"
+              <a
+                href="https://www.traveloperations.pk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#1B365D] hover:bg-[#FF6B00] transition-colors shadow-md inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Speak to Uzbekistan Desk</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -390,12 +394,14 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
           </div>
 
           <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <button
-              onClick={onOpenContact}
-              className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-[#FF6B00] hover:bg-orange-600 shadow-lg shadow-orange-500/30 transition-all text-center cursor-pointer"
+            <a
+              href="https://www.traveloperations.pk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-[#FF6B00] hover:bg-orange-600 shadow-lg shadow-orange-500/30 transition-all text-center inline-flex items-center justify-center cursor-pointer"
             >
               Contact PSA Desk
-            </button>
+            </a>
             <button
               onClick={onBackToHome}
               className="px-6 py-3.5 rounded-xl font-bold text-sm text-slate-200 bg-white/10 hover:bg-white/20 border border-white/20 transition-all text-center cursor-pointer"
