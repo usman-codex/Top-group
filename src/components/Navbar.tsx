@@ -101,6 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                     {COMPANIES.map((comp) => {
                       const isPakCis = comp.slug === 'pakcis-trade' || comp.id === '1';
                       const isFintech = comp.slug === 'fintech-edge-institute' || comp.id === '5';
+                      const isArtel = comp.slug === 'artel-services' || comp.id === '7';
                       return (
                         <div
                           key={comp.id}
@@ -109,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                             setActiveDropdown(null);
                           }}
                           className={`px-2.5 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-2.5 group border ${
-                            isPakCis || isFintech
+                            isPakCis || isFintech || isArtel
                               ? 'bg-gradient-to-r from-blue-50/90 to-orange-50/80 border-orange-200/90 hover:border-[#FF6B00]' 
                               : 'bg-slate-50/80 hover:bg-blue-50/70 border-slate-100 hover:border-[#1B365D]/40'
                           }`}
@@ -117,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                           {/* Official Brand Logo Badge */}
                           <div className="relative shrink-0 group-hover:scale-105 transition-transform">
                             <BrandLogo id={comp.slug} size="sm" className="w-8 h-8 border border-slate-200/80 bg-white shadow-2xs p-0.5 rounded-lg" />
-                            {(isPakCis || isFintech) && (
+                            {(isPakCis || isFintech || isArtel) && (
                               <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-500 border border-white animate-ping" />
                             )}
                           </div>
