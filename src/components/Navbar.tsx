@@ -15,6 +15,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileEcosystemOpen, setMobileEcosystemOpen] = useState(false);
+  const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -244,19 +246,90 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
               >
                 About Us
               </button>
-              <button
-                onClick={() => handleNavClick('companies')}
-                className="w-full text-left py-2 text-base font-semibold text-slate-800 hover:text-[#FF6B00] border-b border-slate-100 flex items-center justify-between"
-              >
-                <span>Our Ecosystem</span>
-                <span className="text-xs text-[#FF6B00] bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200 font-bold">{COMPANIES.length} Companies</span>
-              </button>
-              <button
-                onClick={() => handleNavClick('capabilities')}
-                className="w-full text-left py-2 text-base font-semibold text-slate-800 hover:text-[#FF6B00] border-b border-slate-100"
-              >
-                What We Do
-              </button>
+              {/* Our Ecosystem Accordion */}
+              <div>
+                <button
+                  onClick={() => setMobileEcosystemOpen(!mobileEcosystemOpen)}
+                  className="w-full text-left py-2 text-base font-semibold text-slate-800 hover:text-[#FF6B00] border-b border-slate-100 flex items-center justify-between cursor-pointer"
+                >
+                  <div className="flex items-center gap-2">
+                    <span>Our Ecosystem</span>
+                    <span className="text-xs text-[#FF6B00] bg-orange-50 px-2 py-0.5 rounded-full border border-orange-200 font-bold">{COMPANIES.length} Companies</span>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-200 ${mobileEcosystemOpen ? 'rotate-180 text-[#FF6B00]' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {mobileEcosystemOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden bg-slate-50/80 rounded-xl my-2 p-2 space-y-1.5 border border-slate-100"
+                    >
+                      {COMPANIES.map((comp) => (
+                        <div
+                          key={comp.id}
+                          onClick={() => {
+                            onSelectCompany(comp.id);
+                            setMobileMenuOpen(false);
+                          }}
+                          className="p-2.5 rounded-lg bg-white border border-slate-100 active:bg-orange-50 flex items-center justify-between cursor-pointer shadow-2xs group"
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <div className="shrink-0">
+                              <BrandLogo id={comp.slug} size="sm" className="w-8 h-8 rounded-md border border-slate-200 bg-white shadow-2xs p-0.5 object-contain" />
+                            </div>
+                            <div className="truncate">
+                              <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00] truncate">{comp.name}</div>
+                              <div className="text-[11px] text-slate-500 truncate">{comp.industry}</div>
+                            </div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-[#FF6B00] shrink-0" />
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* What We Do Accordion */}
+              <div>
+                <button
+                  onClick={() => setMobileCapabilitiesOpen(!mobileCapabilitiesOpen)}
+                  className="w-full text-left py-2 text-base font-semibold text-slate-800 hover:text-[#FF6B00] border-b border-slate-100 flex items-center justify-between cursor-pointer"
+                >
+                  <span>What We Do</span>
+                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-200 ${mobileCapabilitiesOpen ? 'rotate-180 text-[#FF6B00]' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {mobileCapabilitiesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden bg-slate-50/80 rounded-xl my-2 p-2 space-y-1.5 border border-slate-100"
+                    >
+                      {CAPABILITIES.map((cap) => (
+                        <div
+                          key={cap.id}
+                          onClick={() => handleNavClick('capabilities')}
+                          className="p-2.5 rounded-lg bg-white border border-slate-100 active:bg-orange-50 flex items-center justify-between cursor-pointer shadow-2xs group"
+                        >
+                          <div>
+                            <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00]">{cap.title}</div>
+                            <div className="text-[11px] text-slate-500">{cap.category}</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-[#FF6B00] shrink-0" />
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <button
                 onClick={() => handleNavClick('media')}
                 className="w-full text-left py-2 text-base font-semibold text-slate-800 hover:text-[#FF6B00] border-b border-slate-100"
