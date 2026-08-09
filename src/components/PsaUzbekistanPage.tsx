@@ -206,16 +206,6 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
                 <span>Book Flights & Visas</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-
-              {onOpenVideo && (
-                <button
-                  onClick={onOpenVideo}
-                  className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <Play className="w-4 h-4 text-orange-300 fill-orange-300" />
-                  <span>Watch Aviation Video</span>
-                </button>
-              )}
             </div>
           </motion.div>
         </div>
