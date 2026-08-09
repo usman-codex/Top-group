@@ -156,39 +156,6 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-orange-50/20 to-slate-50 text-slate-800 font-sans selection:bg-[#FF6B00] selection:text-white pt-20">
       
-      {/* Sticky Top Navigation Bar for Page */}
-      <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-2xs py-3 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#1B365D] hover:text-[#FF6B00] transition-colors group cursor-pointer"
-          >
-            <div className="w-8 h-8 rounded-lg bg-orange-50 group-hover:bg-orange-100 flex items-center justify-center transition-colors">
-              <ArrowLeft className="w-4 h-4 text-[#FF6B00]" />
-            </div>
-            <span>Back to Ecosystem</span>
-          </button>
-
-          <div className="flex items-center gap-3">
-            {onOpenVideo && (
-              <button
-                onClick={onOpenVideo}
-                className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold text-[#1B365D] bg-slate-100 hover:bg-orange-100/60 border border-slate-200 transition-colors"
-              >
-                <Play className="w-3.5 h-3.5 text-[#FF6B00] fill-[#FF6B00]" />
-                Watch Presentation
-              </button>
-            )}
-            <button
-              onClick={onOpenContact}
-              className="px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-[#FF6B00] to-orange-600 hover:shadow-md hover:shadow-orange-500/20 transition-all cursor-pointer"
-            >
-              Book / Enquire Now
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center justify-center overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         {/* Background Image Container */}
