@@ -13,6 +13,7 @@ import { FintechEdgePage } from './components/FintechEdgePage';
 import { ArtelServicesPage } from './components/ArtelServicesPage';
 import { PsaUzbekistanPage } from './components/PsaUzbekistanPage';
 import { TravelOperationsPage } from './components/TravelOperationsPage';
+import { VadesGroupPage } from './components/VadesGroupPage';
 import { WhyTopGroup } from './components/WhyTopGroup';
 import { CompaniesGrid } from './components/CompaniesGrid';
 import { CompanyDetailModal } from './components/CompanyDetailModal';
@@ -37,7 +38,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -84,6 +85,11 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (companyId === '6' || companyId === 'vades-group' || companyId === 'vades' || companyId === 'vadesgroup') {
+      setCurrentView('vades-group');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const comp = COMPANIES.find(c => c.id === companyId || c.slug === companyId);
     if (comp) {
       setSelectedCompany(comp);
@@ -117,6 +123,12 @@ export default function App() {
 
     if (sectionId === 'artel-services' || sectionId === 'artel' || sectionId === '7') {
       setCurrentView('artel-services');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'vades-group' || sectionId === 'vades' || sectionId === '6') {
+      setCurrentView('vades-group');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -249,6 +261,15 @@ export default function App() {
           onOpenContact={() => setContactOpen(true)}
           onSelectCompany={handleSelectCompanyById}
         />
+      ) : currentView === 'vades-group' ? (
+        <VadesGroupPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
       ) : (
         <main>
           {/* 2. Hero Section */}
@@ -257,20 +278,8 @@ export default function App() {
   onNavigateSection={handleNavigateSection}
   
           />
-<<<<<<< HEAD
-{/* 5. Our Companies (2 Rows x 3 Cards Grid) */}
-          <CompaniesGrid 
-            onSelectCompany={handleSelectCompanyById}
-          />
+
           
-=======
-
-           {/* 5. Our Companies (2 Rows x 3 Cards Grid) */}
-          <CompaniesGrid 
-            onSelectCompany={handleSelectCompanyById}
-          />
-
->>>>>>> 7c48c8d84ef95ec9239b3a42643e0eac5b15ea16
 
           {/* 3. About TOP GROUP Ecosystem */}
           <AboutSection 
@@ -278,19 +287,16 @@ export default function App() {
             onNavigateSection={handleNavigateSection}
           />
 
-          
-
           {/* 4. Why TOP GROUP (4 Glass Cards) */}
           <WhyTopGroup 
             onNavigateSection={handleNavigateSection}
           />
 
-<<<<<<< HEAD
-          
+          {/* 5. Our Companies (2 Rows x 3 Cards Grid) */}
+          <CompaniesGrid 
+            onSelectCompany={handleSelectCompanyById}
+          />
 
-=======
-         
->>>>>>> 7c48c8d84ef95ec9239b3a42643e0eac5b15ea16
           {/* 6. Company Statistics (Animated Counters) */}
           <CompanyStats />
 
