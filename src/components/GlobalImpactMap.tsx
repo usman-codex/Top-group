@@ -366,7 +366,7 @@ export const GlobalImpactMap: React.FC = () => {
                 <div className="mt-auto pt-4 border-t border-slate-100">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">
                     <Building2 className="w-3.5 h-3.5 text-[#005DFF]" />
-                    Connected divisions
+                    Connected Companies
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {active.divisions.map((d) => (
