@@ -257,7 +257,10 @@ export default function App() {
   onNavigateSection={handleNavigateSection}
   
           />
-
+{/* 5. Our Companies (2 Rows x 3 Cards Grid) */}
+          <CompaniesGrid 
+            onSelectCompany={handleSelectCompanyById}
+          />
           
 
           {/* 3. About TOP GROUP Ecosystem */}
@@ -266,15 +269,14 @@ export default function App() {
             onNavigateSection={handleNavigateSection}
           />
 
+          
+
           {/* 4. Why TOP GROUP (4 Glass Cards) */}
           <WhyTopGroup 
             onNavigateSection={handleNavigateSection}
           />
 
-          {/* 5. Our Companies (2 Rows x 3 Cards Grid) */}
-          <CompaniesGrid 
-            onSelectCompany={handleSelectCompanyById}
-          />
+          
 
           {/* 6. Company Statistics (Animated Counters) */}
           <CompanyStats />

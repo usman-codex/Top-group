@@ -111,7 +111,7 @@ const CompanyCardItem: React.FC<CompanyCardItemProps> = ({ comp, index, onSelect
           {/* Left to right filling background */}
           <div className="absolute inset-0 bg-[#FF6B00] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
           <span className="relative z-10 flex items-center gap-2">
-            <span>View Division Profile</span>
+            <span>View Company</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         </div>
