@@ -112,12 +112,41 @@ export interface FaqItem {
   answer: string;
 }
 
+export type HubStatus =
+  | 'Global HQ'
+  | 'Active Hub'
+  | 'Trade Corridor'
+  | 'Gateway Port'
+  | 'Emerging Market'
+  | 'Partner Office';
+
+export interface ImpactCity {
+  name: string;
+
+  coordinates: [number, number];
+  type: 'capital' | 'city' | 'port';
+}
+
 export interface CountryImpact {
   id: string;
+ 
+  isoNumeric: string;
   country: string;
   region: string;
-  status: 'Active Hub' | 'Partner Office' | 'Expansion Zone';
+  status: HubStatus;
   clients: string;
-  coordinates: { x: number; y: number }; // Percentage on map
   description: string;
+
+  coordinates: [number, number];
+  cities: ImpactCity[];
+ 
+  divisions: string[];
+}
+
+export interface TradeRoute {
+  id: string;
+  from: [number, number];
+  to: [number, number];
+  label: string;
+  accent?: 'orange' | 'blue';
 }

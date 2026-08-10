@@ -1,5 +1,5 @@
-import { Company, Capability, ServiceItem, MediaEvent, BlogPost, Testimonial, FaqItem, CountryImpact } from '../types';
 
+import { Company, Capability, ServiceItem, MediaEvent, BlogPost, Testimonial, FaqItem, CountryImpact, TradeRoute } from '../types';
 import pakcisImage from "../assets/company-images/pakcis-image.jpeg";
 import travelImage from "../assets/company-images/traveloperations-image.jpg";
 import chickenCharcoImage from "../assets/company-images/chicken-charco-image.png";
@@ -549,14 +549,184 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const IMPACT_COUNTRIES: CountryImpact[] = [
-  { id: '1', country: 'Uzbekistan', region: 'Central Asia', status: 'Active Hub', clients: '850+ Enterprise Clients', coordinates: { x: 64, y: 38 }, description: 'Global Operational Headquarters & Manufacturing Plants' },
-  { id: '2', country: 'United Arab Emirates', region: 'Middle East', status: 'Active Hub', clients: '420+ Corporate Clients', coordinates: { x: 59, y: 46 }, description: 'Trade Finance & Dubai Hospitality Flagships' },
-  { id: '3', country: 'United Kingdom', region: 'Europe', status: 'Active Hub', clients: '210+ Clients', coordinates: { x: 45, y: 28 }, description: 'Vades Digital AI Research & Investment Advisory' },
-  { id: '4', country: 'Singapore', region: 'Asia Pacific', status: 'Active Hub', clients: '190+ Partners', coordinates: { x: 78, y: 58 }, description: 'FinTech Edge Regional Innovation Center' },
-  { id: '5', country: 'Germany', region: 'Europe', status: 'Partner Office', clients: '140+ Importers', coordinates: { x: 49, y: 30 }, description: 'Smart Hardware R&D and Quality Labs' },
-  { id: '6', country: 'Turkey', region: 'Eurasia', status: 'Active Hub', clients: '310+ Logistics Clients', coordinates: { x: 54, y: 37 }, description: 'Aviation Charters & Freight Transit Hub' }
+  {
+    id: '1',
+    isoNumeric: '860',
+    country: 'Uzbekistan',
+    region: 'Central Asia',
+    status: 'Global HQ',
+    clients: '850+ Enterprise Clients',
+    description:
+      'Global Operational Headquarters. Tashkent anchors every TOP GROUP division — trade, aviation, hospitality, education, technology, industrial services and diagnostics.',
+    coordinates: [64.0, 41.6],
+    cities: [{ name: 'Tashkent', coordinates: [69.24, 41.3], type: 'capital' }],
+    divisions: [
+      'PakCIS Trade',
+      'Travel Operations',
+      'PSA for Uzbekistan',
+      'Chicken Charco',
+      'FinTech Edge Institute',
+      'Vades Group',
+      'Artel Services',
+      'Metro City Lab',
+    ],
+  },
+  {
+    id: '2',
+    isoNumeric: '586',
+    country: 'Pakistan',
+    region: 'South Asia',
+    status: 'Active Hub',
+    clients: '640+ Trade Clients',
+    description:
+      'Southern gateway of the corridor. Corporate offices in Lahore and Islamabad, with sea freight moving through Karachi Port and Gwadar Port into Central Asia.',
+    coordinates: [69.5, 29.2],
+    cities: [
+      { name: 'Peshawar', coordinates: [71.58, 34.01], type: 'city' },
+      { name: 'Islamabad', coordinates: [73.04, 33.68], type: 'capital' },
+      { name: 'Lahore', coordinates: [74.34, 31.55], type: 'city' },
+      { name: 'Quetta', coordinates: [67.0, 30.18], type: 'city' },
+      { name: 'Karachi Port', coordinates: [67.0, 24.86], type: 'port' },
+      { name: 'Gwadar Port', coordinates: [62.33, 25.12], type: 'port' },
+    ],
+    divisions: ['PakCIS Trade', 'Travel Operations', 'FinTech Edge Institute'],
+  },
+  {
+    id: '3',
+    isoNumeric: '398',
+    country: 'Kazakhstan',
+    region: 'Central Asia',
+    status: 'Active Hub',
+    clients: '410+ Distribution Partners',
+    description:
+      'Largest market on the northern corridor. Almaty serves as the commercial hub while Nur-Sultan handles administrative and customs gateway operations.',
+    coordinates: [67.0, 48.2],
+    cities: [
+      { name: 'Nur-Sultan', coordinates: [71.43, 51.13], type: 'capital' },
+      { name: 'Almaty', coordinates: [76.89, 43.24], type: 'city' },
+    ],
+    divisions: ['PakCIS Trade', 'Artel Services'],
+  },
+  {
+    id: '4',
+    isoNumeric: '156',
+    country: 'China',
+    region: 'East Asia',
+    status: 'Active Hub',
+    clients: '380+ Sourcing Partners',
+    description:
+      'Primary sourcing origin. Kashgar anchors the western overland gateway feeding both the Karakoram route and the wider Central Asian corridor.',
+    coordinates: [86.0, 37.0],
+    cities: [{ name: 'Kashgar', coordinates: [75.99, 39.47], type: 'city' }],
+    divisions: ['PakCIS Trade', 'Artel Services'],
+  },
+  {
+    id: '5',
+    isoNumeric: '031',
+    country: 'Azerbaijan',
+    region: 'Caucasus',
+    status: 'Gateway Port',
+    clients: '220+ Freight Clients',
+    description:
+      'Westbound gateway across the Caspian. Baku links Central Asian freight onward to Turkish and European markets via the Trans-Caspian corridor.',
+    coordinates: [47.4, 40.4],
+    cities: [{ name: 'Baku', coordinates: [49.87, 40.41], type: 'capital' }],
+    divisions: ['PakCIS Trade', 'Travel Operations'],
+  },
+  {
+    id: '6',
+    isoNumeric: '417',
+    country: 'Kyrgyzstan',
+    region: 'Central Asia',
+    status: 'Trade Corridor',
+    clients: '160+ Transit Clients',
+    description:
+      'Key transit link between Kashgar and the Fergana Valley, routing Chinese overland freight into the wider Central Asian network.',
+    coordinates: [74.6, 41.3],
+    cities: [{ name: 'Bishkek', coordinates: [74.6, 42.87], type: 'capital' }],
+    divisions: ['PakCIS Trade'],
+  },
+  {
+    id: '7',
+    isoNumeric: '795',
+    country: 'Turkmenistan',
+    region: 'Central Asia',
+    status: 'Trade Corridor',
+    clients: '130+ Corridor Clients',
+    description:
+      'The land bridge to the Caspian. Cargo routed through Ashgabat connects onward to Baku and the Trans-Caspian shipping lanes.',
+    coordinates: [58.5, 39.2],
+    cities: [{ name: 'Ashgabat', coordinates: [58.38, 37.95], type: 'capital' }],
+    divisions: ['PakCIS Trade'],
+  },
+  {
+    id: '8',
+    isoNumeric: '762',
+    country: 'Tajikistan',
+    region: 'Central Asia',
+    status: 'Emerging Market',
+    clients: '95+ Clients',
+    description:
+      'Emerging corridor market reached overland via Afghanistan and the Pamir routes, with rising demand for consumer goods and textiles.',
+    coordinates: [71.2, 38.6],
+    cities: [],
+    divisions: ['PakCIS Trade'],
+  },
+  {
+    id: '9',
+    isoNumeric: '004',
+    country: 'Afghanistan',
+    region: 'South & Central Asia',
+    status: 'Trade Corridor',
+    clients: '110+ Corridor Clients',
+    description:
+      'Overland bridge between Pakistan and Central Asia. Cargo moves via Peshawar and Quetta through Kabul toward the northern borders.',
+    coordinates: [65.8, 33.2],
+    cities: [{ name: 'Kabul', coordinates: [69.17, 34.53], type: 'capital' }],
+    divisions: ['PakCIS Trade'],
+  },
+  {
+    id: '10',
+    isoNumeric: '364',
+    country: 'Iran',
+    region: 'Middle East',
+    status: 'Trade Corridor',
+    clients: '140+ Transit Clients',
+    description:
+      'Alternate westbound land corridor connecting Pakistani ports to the Caspian basin and onward to Turkey and the Gulf.',
+    coordinates: [54.0, 32.0],
+    cities: [],
+    divisions: ['PakCIS Trade'],
+  },
+  {
+    id: '11',
+    isoNumeric: '643',
+    country: 'Russia',
+    region: 'Eurasia',
+    status: 'Emerging Market',
+    clients: '175+ Importers',
+    description:
+      'Northern extension of the CIS network, reached via the Kazakhstan corridor for onward distribution into the Russian Federation.',
+    coordinates: [56.0, 55.5],
+    cities: [],
+    divisions: ['PakCIS Trade', 'Artel Services'],
+  },
 ];
 
+/** Dashed trade lines drawn between hubs on the map */
+export const TRADE_ROUTES: TradeRoute[] = [
+  { id: 'khi-tas', from: [67.0, 24.86], to: [69.24, 41.3], label: 'Karachi → Tashkent', accent: 'orange' },
+  { id: 'gwd-ash', from: [62.33, 25.12], to: [58.38, 37.95], label: 'Gwadar → Ashgabat', accent: 'blue' },
+  { id: 'tas-alm', from: [69.24, 41.3], to: [76.89, 43.24], label: 'Tashkent → Almaty', accent: 'orange' },
+  { id: 'alm-nur', from: [76.89, 43.24], to: [71.43, 51.13], label: 'Almaty → Nur-Sultan', accent: 'orange' },
+  { id: 'ash-bak', from: [58.38, 37.95], to: [49.87, 40.41], label: 'Ashgabat → Baku', accent: 'blue' },
+  { id: 'isb-kbl', from: [73.04, 33.68], to: [69.17, 34.53], label: 'Islamabad → Kabul', accent: 'orange' },
+  { id: 'kbl-tas', from: [69.17, 34.53], to: [69.24, 41.3], label: 'Kabul → Tashkent', accent: 'blue' },
+  { id: 'kas-bis', from: [75.99, 39.47], to: [74.6, 42.87], label: 'Kashgar → Bishkek', accent: 'blue' },
+];
+
+/** Only these countries are rendered on the map */
+export const VISIBLE_ISO: string[] = IMPACT_COUNTRIES.map((c) => c.isoNumeric);
 export const CERTIFICATIONS = [
   { name: 'ISO 9001:2025', desc: 'Quality Management System', badge: 'Certified' },
   { name: 'GDPR & PDPA', desc: 'Global Data Privacy Compliance', badge: 'Verified' },
