@@ -10,6 +10,9 @@ import { MediaEventsPage } from './components/MediaEventsPage';
 import { ResourcesPage } from './components/ResourcesPage';
 import { PakCisTradePage } from './components/PakCisTradePage';
 import { FintechEdgePage } from './components/FintechEdgePage';
+import { ArtelServicesPage } from './components/ArtelServicesPage';
+import { PsaUzbekistanPage } from './components/PsaUzbekistanPage';
+import { TravelOperationsPage } from './components/TravelOperationsPage';
 import { WhyTopGroup } from './components/WhyTopGroup';
 import { CompaniesGrid } from './components/CompaniesGrid';
 import { CompanyDetailModal } from './components/CompanyDetailModal';
@@ -34,7 +37,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -61,8 +64,23 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (companyId === '2' || companyId === 'travel-operations' || companyId === 'travel') {
+      setCurrentView('travel-operations');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (companyId === '4' || companyId === 'psa-uzbekistan' || companyId === 'psa-for-uzbekistan' || companyId === 'psa') {
+      setCurrentView('psa-uzbekistan');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     if (companyId === '5' || companyId === 'fintech-edge-institute' || companyId === 'fintech-edge' || companyId === 'fintech') {
       setCurrentView('fintech-edge');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (companyId === '7' || companyId === 'artel-services' || companyId === 'artel') {
+      setCurrentView('artel-services');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -79,8 +97,26 @@ export default function App() {
       return;
     }
 
+    if (sectionId === 'travel-operations' || sectionId === 'travel' || sectionId === '2') {
+      setCurrentView('travel-operations');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'psa-uzbekistan' || sectionId === 'psa-for-uzbekistan' || sectionId === 'psa' || sectionId === '4') {
+      setCurrentView('psa-uzbekistan');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     if (sectionId === 'fintech-edge' || sectionId === 'fintech-edge-institute' || sectionId === 'fintech' || sectionId === '5') {
       setCurrentView('fintech-edge');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'artel-services' || sectionId === 'artel' || sectionId === '7') {
+      setCurrentView('artel-services');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -182,6 +218,35 @@ export default function App() {
           }}
           onOpenContact={() => setContactOpen(true)}
           onOpenVideo={() => setVideoOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'artel-services' ? (
+        <ArtelServicesPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onOpenVideo={() => setVideoOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'psa-uzbekistan' ? (
+        <PsaUzbekistanPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onOpenVideo={() => setVideoOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'travel-operations' ? (
+        <TravelOperationsPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
           onSelectCompany={handleSelectCompanyById}
         />
       ) : (
