@@ -224,7 +224,6 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-orange-400 text-xs font-black uppercase tracking-widest backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5" />
                 <span>TOP GROUP ECOSYSTEM COMPANY</span>
               </div>
 
@@ -350,7 +349,6 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
             {/* Right Text */}
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF6B00] text-xs font-black uppercase tracking-widest">
-                <Award className="w-3.5 h-3.5" />
                 <span>SECTION 1 — ABOUT</span>
               </div>
 
@@ -393,7 +391,6 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF6B00] text-xs font-black uppercase tracking-widest">
-              <Layers className="w-3.5 h-3.5" />
               <span>SECTION 2 — WHAT WE DO</span>
             </div>
 
@@ -456,7 +453,6 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF6B00] text-xs font-black uppercase tracking-widest">
-              <Star className="w-3.5 h-3.5" />
               <span>SECTION 3 — WHY VADES GROUP</span>
             </div>
 
