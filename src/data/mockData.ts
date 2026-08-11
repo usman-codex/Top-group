@@ -31,6 +31,9 @@ import uzbedelvisit1 from '../assets/images/uzbe-del-visit1.jpeg';
 import kyrgyzstanVisit from '../assets/images/kyrgyzstanVisit.jpeg';
 import kyrgyzstanVisit1 from '../assets/images/kyrgyzstanVisit1.jpeg';
 import kyrgyzstanVisit2 from '../assets/images/kyrgyzstanVisit2.jpeg';
+import chickenCharco from '../assets/images/chicken-charco-image.png';
+import chickenCharco1 from '../assets/images/chicken-charco-image1.png';
+import chickenCharco2 from '../assets/images/chicken-charco-image2.png';
 
 
 
@@ -435,21 +438,38 @@ export const MEDIA_EVENTS: MediaEvent[] = [
     'Pakistan–Kyrgyzstan Relations'
   ]
 },
-  {
-    id: 'm4',
-    slug: 'chicken-charco-expansion',
-    title: 'Chicken Charco Launches 40th Outlet in Dubai',
-    category: 'Project Launches',
-    date: 'March 05, 2026',
-    location: 'Downtown Dubai, UAE',
-    shortDesc: 'Celebrating the grand opening of Chicken Charco flagships store with automated cloud kitchen integrations.',
-    fullStory: 'Chicken Charco expanded its international footprint into the heart of Dubai. Featuring smart ordering kiosks and authentic charcoal wood flame recipes, the launch set a record opening week sales volume.',
-    coverImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'
-    ],
-    keyGuests: ['UAE Food Authority Director', 'VP of Hospitality TOP GROUP']
-  }
+ {
+  id: 'm4',
+
+  slug: 'chicken-charco-restaurant-launch',
+
+  title: 'Chicken Charco Restaurant Launch',
+
+  category: 'Project Launches',
+
+  date: 'March 05, 2026',
+
+  location: 'Pakistan',
+
+  shortDesc:
+    'Chicken Charco unveils its modern restaurant concept, combining premium charcoal-grilled cuisine with a contemporary dining experience.',
+
+  fullStory:
+    'Chicken Charco has introduced its modern restaurant concept with a distinctive charcoal-inspired identity and contemporary dining environment. The new outlet showcases the brand’s focus on quality grilled food, memorable customer experiences, and modern hospitality. With its bold visual identity, warm ambience, and dedicated dining space, Chicken Charco represents the growing hospitality portfolio of TOP GROUP.',
+
+  coverImage: chickenCharco,
+
+  galleryImages: [
+    chickenCharco1,
+    chickenCharco2
+  ],
+
+  keyGuests: [
+    'TOP GROUP Leadership',
+    'Chicken Charco Management Team',
+    'Hospitality & Operations Team'
+  ]
+},
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
