@@ -14,6 +14,7 @@ import { ArtelServicesPage } from './components/ArtelServicesPage';
 import { PsaUzbekistanPage } from './components/PsaUzbekistanPage';
 import { TravelOperationsPage } from './components/TravelOperationsPage';
 import { VadesGroupPage } from './components/VadesGroupPage';
+import { ChickenCharcoPage } from './components/ChickenCharcoPage';
 import { BusinessStrategyPage } from './components/BusinessStrategyPage';
 import { SoftwareDevelopmentPage } from './components/SoftwareDevelopmentPage';
 import { AiAutomationPage } from './components/AiAutomationPage';
@@ -42,7 +43,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group' | 'business-strategy' | 'software-development' | 'ai-automation' | 'cloud-solutions'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group' | 'chicken-charco' | 'business-strategy' | 'software-development' | 'ai-automation' | 'cloud-solutions'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -94,6 +95,11 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (companyId === '3' || companyId === 'chicken-charco' || companyId === 'chicken' || companyId === 'charco') {
+      setCurrentView('chicken-charco');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const comp = COMPANIES.find(c => c.id === companyId || c.slug === companyId);
     if (comp) {
       setSelectedCompany(comp);
@@ -133,6 +139,12 @@ export default function App() {
 
     if (sectionId === 'vades-group' || sectionId === 'vades' || sectionId === '6') {
       setCurrentView('vades-group');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'chicken-charco' || sectionId === 'chicken' || sectionId === 'charco' || sectionId === '3') {
+      setCurrentView('chicken-charco');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -291,6 +303,15 @@ export default function App() {
         />
       ) : currentView === 'vades-group' ? (
         <VadesGroupPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'chicken-charco' ? (
+        <ChickenCharcoPage
           onBackToHome={() => {
             setCurrentView('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
