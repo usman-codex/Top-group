@@ -295,9 +295,10 @@ export const Hero: React.FC<HeroProps> = ({
                 border-t
                 border-slate-200
                 grid
-                grid-cols-1
-                sm:grid-cols-3
+                grid-cols-2
                 gap-8
+                max-w-md
+                mx-auto
               "
             >
 
