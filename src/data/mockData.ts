@@ -19,6 +19,23 @@ import psaVideo from "../assets/company-videos/traveloperations-video.mp4";
 import vadesVideo from "../assets/company-videos/vades-group-video.mp4";
 import artelVideo from "../assets/company-videos/artel-video.mp4";
 import metroVideo from "../assets/company-videos/metro-city-lab.mp4";
+
+
+
+import uzbekistanDelVisit from '../assets/images/uzbekistan-delegations.png';
+import uzbekistanDelVisit3 from '../assets/images/m3.png';
+import uzbekistanDelVisit2 from '../assets/images/m2.png';
+import uzbekistanDelVisit1 from '../assets/images/m1.png';
+import uzbedelvisit from '../assets/images/uzbe-del-visit.jpeg';
+import uzbedelvisit1 from '../assets/images/uzbe-del-visit1.jpeg';
+import kyrgyzstanVisit from '../assets/images/kyrgyzstanVisit.jpeg';
+import kyrgyzstanVisit1 from '../assets/images/kyrgyzstanVisit1.jpeg';
+import kyrgyzstanVisit2 from '../assets/images/kyrgyzstanVisit2.jpeg';
+
+
+
+
+
 export const COMPANIES: Company[] = [
   {
     id: '1',
@@ -337,55 +354,87 @@ export const SERVICES: ServiceItem[] = [
 export const MEDIA_EVENTS: MediaEvent[] = [
   {
     id: 'm1',
-    slug: 'eurasian-trade-summit-2026',
-    title: 'Eurasian Economic Cooperation Summit 2026',
-    category: 'Corporate Events',
+    slug: 'uzbekistan-delegation-project-visit',
+    title: 'International Collaboration & Project Visit',
+    category: 'International Collaboration',
     date: 'June 14, 2026',
-    location: 'International Congress Center, Tashkent',
-    shortDesc: 'TOP GROUP hosted over 350 diplomatic delegates and corporate executives to finalize multilateral trade pacts.',
-    fullStory: 'The Eurasian Economic Cooperation Summit brought together key ministers of trade, logistics leaders, and technology pioneers across 28 nations. TOP GROUP showcased its unified trade finance portal and unveiled new green logistics corridors between Central Asia, Europe, and the Gulf Region.',
-    coverImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+    location: 'Fintech Edge Institue, Lahore',
+    shortDesc: 'Delegates from Uzbekistan visited our office to explore our ongoing projects, discuss potential collaboration opportunities, and strengthen professional relations between Pakistan and Uzbekistan.',
+    fullStory: 'TOP GROUP was pleased to welcome a delegation from Uzbekistan to our Lahore office. During the visit, the delegation explored our ongoing projects and interacted with our team to gain insights into our operations, capabilities, and areas of expertise. The meeting also provided an opportunity to discuss potential collaborations and future business opportunities.',
+
+     coverImage: uzbekistanDelVisit,
     galleryImages: [
-      'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80'
+      uzbekistanDelVisit1,
+      uzbekistanDelVisit2,
+      uzbekistanDelVisit3,
+
+    
     ],
     keyGuests: ['Ambassador of Trade & Logistics', 'CEO of Eurasian Shipping Lines', 'Director General of FinTech Alliance'],
-    certificates: ['ISO 9001:2025 Summit Organizer Certification', 'Excellence in International Diplomacy Award']
+    certificates: ['International Business Collaboration',
+    'Pakistan–Uzbekistan Business Relations']
   },
   {
     id: 'm2',
-    slug: 'fintech-edge-graduation-2026',
-    title: 'FinTech Edge Institute Annual Convocation',
-    category: 'Conferences',
-    date: 'May 20, 2026',
-    location: 'Grand Ballroom, Tashkent',
-    shortDesc: 'Graduation ceremony celebrating 1,200 financial technology specialists and awarding $250k in startup innovation grants.',
-    fullStory: 'The annual convocation of FinTech Edge Institute featured keynote addresses by leading quantitative traders and AI researchers. Over 1,200 graduates earned specialized diplomas in algorithmic trading, blockchain compliance, and machine learning for risk management.',
-    coverImage: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80',
+    slug: 'uzbekistan-delegation-official-visit-2026',
+    title: 'Uzbekistan Delegation Official Visit',
+    category: 'International Collaboration',
+    date: 'June 14, 2026',
+    location: 'TOP GROUP Office, Lahore',
+    shortDesc:  'TOP GROUP welcomed a delegation from Uzbekistan during an official visit focused on exploring business opportunities, ongoing projects, and future collaboration between Pakistan and Uzbekistan.',
+
+    fullStory:  'TOP GROUP had the pleasure of welcoming a delegation from Uzbekistan to its Lahore office. The visit provided an opportunity for the delegation to meet with the TOP GROUP team, explore our ongoing projects, and learn more about our diverse group of companies and services. The meeting also focused on identifying potential areas of cooperation and developing stronger business relationships between Pakistan and Uzbekistan. The delegation was warmly welcomed by the team, marking another step toward building meaningful international partnerships.',
+
+    coverImage: uzbedelvisit,
     galleryImages: [
-      'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80'
-    ],
-    keyGuests: ['Head of Central Banking Tech', 'CTO of Vades Digital'],
-    certificates: ['Global FinTech Accreditation Certificate']
+      uzbedelvisit1,],
+    keyGuests: [
+    'Uzbekistan Delegation Members',
+    'TOP GROUP Management',
+    'Project & Business Development Team'
+  ],
+   certificates: [
+    'International Business Collaboration',
+    'Pakistan–Uzbekistan Business Relations'
+  ]
   },
   {
-    id: 'm3',
-    slug: 'uzbekistan-airways-partnership',
-    title: 'Strategic Cooperation Pact with PSA Uzbekistan Airways',
-    category: 'Embassy Visits',
-    date: 'April 12, 2026',
-    location: 'Tashkent International Airport VIP Terminal',
-    shortDesc: 'Signing landmark agreement to expand luxury cargo corridors and executive charter services across Europe and Asia.',
-    fullStory: 'Travel Operations and TOP GROUP executive leadership signed an exclusive strategic agreement with aviation authorities to launch high-capacity express freight routes and premium corporate charter packages.',
-    coverImage: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80'
-    ],
-    keyGuests: ['Minister of Civil Aviation', 'CEO of TOP GROUP'],
-    certificates: ['IATA Cargo Partner Certification']
-  },
+  id: 'm3',
+
+  slug: 'kyrgyzstan-delegation-visit-2026',
+
+  title: 'Kyrgyzstan Delegation Visit',
+
+  category: 'International Visits',
+
+  date: 'April 12, 2026',
+
+  location: 'TOP GROUP Office, Lahore',
+
+  shortDesc:
+    'TOP GROUP welcomed a delegation from Kyrgyzstan for a meaningful meeting focused on strengthening international relations and exploring opportunities for future cooperation.',
+
+  fullStory:
+    'TOP GROUP had the honor of welcoming a delegation from Kyrgyzstan during an official visit. The meeting provided an opportunity to exchange ideas, discuss potential areas of cooperation, and strengthen professional and business relations between Pakistan and Kyrgyzstan. As part of the visit, the delegation was warmly welcomed by TOP GROUP leadership, with a commemorative gift presented as a gesture of friendship and mutual respect.',
+
+  coverImage: kyrgyzstanVisit,
+
+  galleryImages: [
+      kyrgyzstanVisit1,
+      kyrgyzstanVisit2,
+  ],
+
+  keyGuests: [
+    'Kyrgyzstan Delegation Representative',
+    'TOP GROUP Leadership',
+    'Business & Project Development Team'
+  ],
+
+  certificates: [
+    'International Business Collaboration',
+    'Pakistan–Kyrgyzstan Relations'
+  ]
+},
   {
     id: 'm4',
     slug: 'chicken-charco-expansion',
