@@ -160,19 +160,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                     <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2 flex items-center gap-1.5 pb-2 border-b border-slate-100">
                       <Cpu className="w-3.5 h-3.5 text-[#FF6B00]" /> Enterprise Capabilities & Services
                     </div>
-                    {CAPABILITIES.slice(0, 4).map((cap) => (
-                      <div
-                        key={cap.id}
-                        onClick={() => handleNavClick('capabilities')}
-                        className="p-2.5 rounded-lg hover:bg-orange-50 transition-colors cursor-pointer flex items-center justify-between group"
-                      >
-                        <div>
-                          <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00] transition-colors">{cap.title}</div>
-                          <div className="text-xs text-slate-500">{cap.category}</div>
+                    {CAPABILITIES.slice(0, 4).map((cap) => {
+                      const target = cap.id === 'c1' ? 'business-strategy' : cap.id === 'c2' ? 'software-development' : cap.id === 'c3' ? 'ai-automation' : cap.id === 'c4' ? 'cloud-solutions' : 'capabilities';
+                      return (
+                        <div
+                          key={cap.id}
+                          onClick={() => handleNavClick(target)}
+                          className="p-2.5 rounded-lg hover:bg-orange-50 transition-colors cursor-pointer flex items-center justify-between group"
+                        >
+                          <div>
+                            <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00] transition-colors">{cap.title}</div>
+                            <div className="text-xs text-slate-500">{cap.category}</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#FF6B00] group-hover:translate-x-1 transition-all" />
                         </div>
-                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#FF6B00] group-hover:translate-x-1 transition-all" />
-                      </div>
-                    ))}
+                      );
+                    })}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -313,19 +316,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden bg-slate-50/80 rounded-xl my-2 p-2 space-y-1.5 border border-slate-100"
                     >
-                      {CAPABILITIES.map((cap) => (
-                        <div
-                          key={cap.id}
-                          onClick={() => handleNavClick('capabilities')}
-                          className="p-2.5 rounded-lg bg-white border border-slate-100 active:bg-orange-50 flex items-center justify-between cursor-pointer shadow-2xs group"
-                        >
-                          <div>
-                            <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00]">{cap.title}</div>
-                            <div className="text-[11px] text-slate-500">{cap.category}</div>
+                      {CAPABILITIES.map((cap) => {
+                        const target = cap.id === 'c1' ? 'business-strategy' : cap.id === 'c2' ? 'software-development' : cap.id === 'c3' ? 'ai-automation' : cap.id === 'c4' ? 'cloud-solutions' : 'capabilities';
+                        return (
+                          <div
+                            key={cap.id}
+                            onClick={() => handleNavClick(target)}
+                            className="p-2.5 rounded-lg bg-white border border-slate-100 active:bg-orange-50 flex items-center justify-between cursor-pointer shadow-2xs group"
+                          >
+                            <div>
+                              <div className="text-sm font-bold text-slate-900 group-hover:text-[#FF6B00]">{cap.title}</div>
+                              <div className="text-[11px] text-slate-500">{cap.category}</div>
+                            </div>
+                            <ArrowRight className="w-4 h-4 text-[#FF6B00] shrink-0" />
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#FF6B00] shrink-0" />
-                        </div>
-                      ))}
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -14,6 +14,10 @@ import { ArtelServicesPage } from './components/ArtelServicesPage';
 import { PsaUzbekistanPage } from './components/PsaUzbekistanPage';
 import { TravelOperationsPage } from './components/TravelOperationsPage';
 import { VadesGroupPage } from './components/VadesGroupPage';
+import { BusinessStrategyPage } from './components/BusinessStrategyPage';
+import { SoftwareDevelopmentPage } from './components/SoftwareDevelopmentPage';
+import { AiAutomationPage } from './components/AiAutomationPage';
+import { CloudSolutionsPage } from './components/CloudSolutionsPage';
 import { WhyTopGroup } from './components/WhyTopGroup';
 import { CompaniesGrid } from './components/CompaniesGrid';
 import { CompanyDetailModal } from './components/CompanyDetailModal';
@@ -38,7 +42,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group' | 'business-strategy' | 'software-development' | 'ai-automation' | 'cloud-solutions'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -129,6 +133,30 @@ export default function App() {
 
     if (sectionId === 'vades-group' || sectionId === 'vades' || sectionId === '6') {
       setCurrentView('vades-group');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'business-strategy' || sectionId === 'c1' || sectionId === 'strategy') {
+      setCurrentView('business-strategy');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'software-development' || sectionId === 'c2' || sectionId === 'software') {
+      setCurrentView('software-development');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'ai-automation' || sectionId === 'c3' || sectionId === 'ai') {
+      setCurrentView('ai-automation');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'cloud-solutions' || sectionId === 'c4' || sectionId === 'cloud') {
+      setCurrentView('cloud-solutions');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -263,6 +291,42 @@ export default function App() {
         />
       ) : currentView === 'vades-group' ? (
         <VadesGroupPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'business-strategy' ? (
+        <BusinessStrategyPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'software-development' ? (
+        <SoftwareDevelopmentPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'ai-automation' ? (
+        <AiAutomationPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'cloud-solutions' ? (
+        <CloudSolutionsPage
           onBackToHome={() => {
             setCurrentView('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
