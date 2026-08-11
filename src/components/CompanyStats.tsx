@@ -122,7 +122,7 @@ export const CompanyStats: React.FC = () => {
     },
     {
       label: 'Specialized Workforce',
-      value: '3,200+',
+      value: '200+',
       icon: ShieldCheck,
       color: 'text-[#FF6B00]'
     },
