@@ -261,20 +261,19 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
 
             {/* Right Card / Visual */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 group">
+              <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 p-2 sm:p-3 group">
                 <img 
                   src={vadesImage} 
                   alt="Vades Group Manufacturing & Card Production" 
-                  className="w-full h-80 sm:h-96 object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-auto rounded-2xl object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 
-                <div className="absolute bottom-0 inset-x-0 p-6 space-y-2">
+                <div className="mt-3 p-4 rounded-2xl bg-slate-900/90 border border-white/10 space-y-1">
                   <div className="flex items-center gap-2 text-xs font-bold text-orange-400">
                     <Building2 className="w-4 h-4" />
                     <span>Tashkent Manufacturing Plant</span>
                   </div>
-                  <p className="text-sm font-semibold text-white/90">
+                  <p className="text-xs sm:text-sm font-semibold text-white/90">
                     State-of-the-art SIM card encoding, smart plastic card production, and high-speed operational printing.
                   </p>
                 </div>
@@ -326,15 +325,15 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
             {/* Left Image & Stats Badge */}
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative">
-                <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
+                <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950 p-2 sm:p-3">
                   <img 
                     src={vadesImage} 
                     alt="Vades Group Manufacturing Facility" 
-                    className="w-full h-80 sm:h-[420px] object-cover"
+                    className="w-full h-auto rounded-2xl object-contain"
                   />
                 </div>
 
-                <div className="absolute -bottom-6 -right-2 sm:-right-6 bg-[#1B365D] text-white p-5 rounded-2xl border border-slate-700 shadow-2xl max-w-xs space-y-1">
+                <div className="absolute -bottom-6 -right-2 sm:-right-4 bg-[#1B365D] text-white p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-2xl max-w-xs space-y-1 z-10">
                   <div className="text-xs font-bold text-orange-400 uppercase tracking-widest flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4" />
                     <span>CENTURION System</span>
