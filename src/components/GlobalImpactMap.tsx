@@ -176,22 +176,6 @@ export const GlobalImpactMap: React.FC = () => {
                 })}
               </g>
 
-              {/* Trade routes */}
-              <g style={{ pointerEvents: 'none' }}>
-                {TRADE_ROUTES.map((route) => (
-                  <path
-                    key={route.id}
-                    d={curve(route.from, route.to)}
-                    fill="none"
-                    stroke={route.accent === 'blue' ? BLUE : ORANGE}
-                    strokeWidth={1.4}
-                    strokeDasharray="5 5"
-                    strokeLinecap="round"
-                    opacity={0.5}
-                  />
-                ))}
-              </g>
-
               {/* Country labels */}
               <g style={{ pointerEvents: 'none' }}>
                 {IMPACT_COUNTRIES.map((c) => {
@@ -295,10 +279,6 @@ export const GlobalImpactMap: React.FC = () => {
               <span className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-600">
                 <Anchor className="w-3 h-3 text-[#0F2557]" />
                 Sea port
-              </span>
-              <span className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-600">
-                <span className="w-5 border-t-2 border-dashed border-[#FF6B00]" />
-                Trade route
               </span>
             </div>
           </div>

@@ -245,7 +245,7 @@ export const CompanyStats: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4"
+            className="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto w-full justify-center"
           >
 
             {stats.map((st, idx) => {
