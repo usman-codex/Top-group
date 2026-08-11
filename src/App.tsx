@@ -15,6 +15,7 @@ import { PsaUzbekistanPage } from './components/PsaUzbekistanPage';
 import { TravelOperationsPage } from './components/TravelOperationsPage';
 import { VadesGroupPage } from './components/VadesGroupPage';
 import { ChickenCharcoPage } from './components/ChickenCharcoPage';
+import { MetroCityLabPage } from './components/MetroCityLabPage';
 import { BusinessStrategyPage } from './components/BusinessStrategyPage';
 import { SoftwareDevelopmentPage } from './components/SoftwareDevelopmentPage';
 import { AiAutomationPage } from './components/AiAutomationPage';
@@ -43,7 +44,7 @@ import { COMPANIES } from './data/mockData';
 import { Company, MediaEvent, BlogPost } from './types';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group' | 'chicken-charco' | 'business-strategy' | 'software-development' | 'ai-automation' | 'cloud-solutions'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'media-events' | 'resources' | 'pakcis-trade' | 'fintech-edge' | 'artel-services' | 'psa-uzbekistan' | 'travel-operations' | 'vades-group' | 'chicken-charco' | 'metro-city-lab' | 'business-strategy' | 'software-development' | 'ai-automation' | 'cloud-solutions'>('home');
   const [contactOpen, setContactOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -100,6 +101,11 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (companyId === '8' || companyId === 'metro-city-lab' || companyId === 'metro' || companyId === 'metrolab') {
+      setCurrentView('metro-city-lab');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const comp = COMPANIES.find(c => c.id === companyId || c.slug === companyId);
     if (comp) {
       setSelectedCompany(comp);
@@ -145,6 +151,12 @@ export default function App() {
 
     if (sectionId === 'chicken-charco' || sectionId === 'chicken' || sectionId === 'charco' || sectionId === '3') {
       setCurrentView('chicken-charco');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId === 'metro-city-lab' || sectionId === 'metro' || sectionId === 'metrolab' || sectionId === '8') {
+      setCurrentView('metro-city-lab');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -312,6 +324,15 @@ export default function App() {
         />
       ) : currentView === 'chicken-charco' ? (
         <ChickenCharcoPage
+          onBackToHome={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenContact={() => setContactOpen(true)}
+          onSelectCompany={handleSelectCompanyById}
+        />
+      ) : currentView === 'metro-city-lab' ? (
+        <MetroCityLabPage
           onBackToHome={() => {
             setCurrentView('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
