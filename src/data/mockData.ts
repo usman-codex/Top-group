@@ -15,7 +15,7 @@ import pakcisVideo from "../assets/company-videos/pakcis-video.mp4";
 import travelVideo from "../assets/company-videos/traveloperations-video.mp4";
 import chickenVideo from "../assets/company-videos/chicken-charco.mp4";
 import fintechVideo from "../assets/company-videos/fintech-edge-video.mp4";
-import psaVideo from "../assets/company-videos/traveloperations-video.mp4";
+import psaVideo from "../assets/company-videos/psa-uzbekistan.mp4";
 import vadesVideo from "../assets/company-videos/vades-group-video.mp4";
 import artelVideo from "../assets/company-videos/artel-video.mp4";
 import metroVideo from "../assets/company-videos/metro-city-lab.mp4";
