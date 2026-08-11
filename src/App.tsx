@@ -25,9 +25,9 @@ import { CompaniesGrid } from './components/CompaniesGrid';
 import { CompanyDetailModal } from './components/CompanyDetailModal';
 import { CompanyStats } from './components/CompanyStats';
 import { CapabilitiesGrid } from './components/CapabilitiesGrid';
-import { IndustriesServed } from './components/IndustriesServed';
+
 import { WhatWeDoTimeline } from './components/WhatWeDoTimeline';
-import { BusinessServices } from './components/BusinessServices';
+
 import { MediaGallery } from './components/MediaGallery';
 import { EventDetailModal } from './components/EventDetailModal';
 import { GlobalImpactMap } from './components/GlobalImpactMap';
@@ -408,23 +408,6 @@ export default function App() {
           {/* 6. Company Statistics (Animated Counters) */}
           <CompanyStats />
 
-          {/* 7. Capabilities (4-Column Grid) */}
-          <CapabilitiesGrid 
-            onNavigateSection={handleNavigateSection}
-            onOpenContact={() => setContactOpen(true)}
-          />
-
-          {/* 8. Industries We Serve (Bento Grid) */}
-          <IndustriesServed />
-
-          {/* 9. What We Do (8-Step Process Timeline) */}
-          <WhatWeDoTimeline />
-
-          {/* 10. Commercial Services & Advisory */}
-          <BusinessServices 
-            onOpenContact={() => setContactOpen(true)}
-          />
-
           {/* 11. Events, Delegations & Media Gallery */}
           <MediaGallery 
             onSelectEvent={(event) => setSelectedEvent(event)}
@@ -433,6 +416,19 @@ export default function App() {
 
           {/* 12. Global Impact & Network Map */}
           <GlobalImpactMap />
+
+          {/* 7. Capabilities (4-Column Grid) */}
+          <CapabilitiesGrid 
+            onNavigateSection={handleNavigateSection}
+            onOpenContact={() => setContactOpen(true)}
+          />
+
+        
+          {/* 9. What We Do (8-Step Process Timeline) */}
+          <WhatWeDoTimeline />
+
+         
+         
 
           {/* 13. Achievements & Certifications */}
           <AchievementsSection />

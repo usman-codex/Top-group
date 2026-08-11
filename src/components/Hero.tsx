@@ -366,32 +366,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* =============================================
                   STAT 3
               ============================================= */}
-              <div className="text-center">
-
-                <div
-                  className="
-                    text-3xl
-                    sm:text-4xl
-                    font-extrabold
-                    text-[#1B365D]
-                    font-heading
-                  "
-                >
-                  $2.4B+
-                </div>
-
-                <div
-                  className="
-                    text-sm
-                    font-semibold
-                    text-slate-600
-                    mt-1
-                  "
-                >
-                  Ecosystem Value
-                </div>
-
-              </div>
+              
 
             </motion.div>
 

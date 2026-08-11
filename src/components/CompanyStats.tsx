@@ -112,27 +112,11 @@ const AnimatedCounter: React.FC<{ value: string }> = ({ value }) => {
 export const CompanyStats: React.FC = () => {
 
   const stats = [
-    {
-      label: 'Sister Companies',
-      value: '15+',
-      icon: Building2,
-      color: 'text-[#FF6B00]'
-    },
-    {
-      label: 'Global Enterprise Clients',
-      value: '2,000+',
-      icon: Users2,
-      color: 'text-blue-600'
-    },
-    {
-      label: 'Completed Megaprojects',
-      value: '40+',
-      icon: Trophy,
-      color: 'text-[#FF6B00]'
-    },
+    
+   
     {
       label: 'International Countries',
-      value: '38+',
+      value: '21+',
       icon: Globe2,
       color: 'text-blue-600'
     },
@@ -142,12 +126,7 @@ export const CompanyStats: React.FC = () => {
       icon: ShieldCheck,
       color: 'text-[#FF6B00]'
     },
-    {
-      label: 'Client Satisfaction SLA',
-      value: '98.4%',
-      icon: CheckCircle2,
-      color: 'text-blue-600'
-    }
+    
   ];
 
 
