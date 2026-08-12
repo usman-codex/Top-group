@@ -234,7 +234,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-slate-200 shadow-xl overflow-hidden"
+            className="lg:hidden bg-white border-t border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]"
           >
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-4">
               <button
@@ -316,7 +316,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onSelectCompany, 
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden bg-slate-50/80 rounded-xl my-2 p-2 space-y-1.5 border border-slate-100"
                     >
-                      {CAPABILITIES.map((cap) => {
+                      {CAPABILITIES.slice(0, 4).map((cap) => {
                         const target = cap.id === 'c1' ? 'business-strategy' : cap.id === 'c2' ? 'software-development' : cap.id === 'c3' ? 'ai-automation' : cap.id === 'c4' ? 'cloud-solutions' : 'capabilities';
                         return (
                           <div
