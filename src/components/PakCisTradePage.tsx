@@ -9,7 +9,7 @@ import {
   BadgeCheck, PackageCheck, Headphones, Percent, CreditCard, Box, ShoppingBag, Landmark
 } from 'lucide-react';
 import { COMPANIES } from '../data/mockData';
-import pakcisImage from "../assets/company-images/pakcis-image.jpeg";
+import pakcisImage from "../assets/images/pakcis-image.png";
 import pakcisVideo from "../assets/company-videos/pakcis-video.mp4";
 
 // Animated Counter component that starts from 0 when scrolled into view
@@ -286,9 +286,9 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
           <img
             src={pakcisImage}
             alt="PakCisTrade Eurasia Logistics"
-            className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
+            className="w-full h-full object-cover object-[center_40%] opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
           {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
         </div>
 
@@ -381,7 +381,7 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
 
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
               <div className="text-3xl sm:text-4xl font-extrabold text-[#1B365D] font-heading">
-                <AnimatedStatNumber end={700} prefix="$" suffix="B+" duration={1400} />
+                <AnimatedStatNumber end={3.5} prefix="$" suffix="B+" duration={1400} />
               </div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">2030 Corridor Potential</div>
             </div>

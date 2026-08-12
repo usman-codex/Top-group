@@ -6,6 +6,7 @@ import {
   Clock, Lock, Check, FileText, Send, Star, Layers, ChevronRight, Globe2
 } from 'lucide-react';
 import vadesImage from "../assets/company-images/vade-image.png";
+import coverImage from "../assets/images/vades-cover.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -187,36 +188,22 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-[#FF6B00] selection:text-white">
       
-      {/* Top Sticky Navigation Bar */}
-      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-600 hover:text-[#FF6B00] transition-colors cursor-pointer group"
-          >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1 text-[#FF6B00]" />
-            <span>Back to TOP GROUP</span>
-          </button>
-
-          <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-flex text-[11px] font-black uppercase tracking-widest text-[#FF6B00] bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
-              Tashkent • Est. 2005
-            </span>
-            <button
-              onClick={() => handleOpenModal('quote')}
-              className="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-[#FF6B00] hover:bg-orange-600 rounded-xl transition-all shadow-md hover:shadow-orange-200 cursor-pointer flex items-center gap-1.5"
-            >
-              <span>Get a Price</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
-      </div>
-
+    
       {/* HERO SECTION */}
       <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 bg-gradient-to-b from-[#1B365D] via-[#162C4E] to-[#0F213D] text-white overflow-hidden">
         {/* Background Grid Accent */}
-        <div className="absolute inset-0 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" /> */}
+
+         {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={coverImage}
+            alt="Vades Group Manufacturing & Card Production"
+            className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
+          />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -260,8 +247,9 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
             </div>
 
             {/* Right Card / Visual */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 p-2 sm:p-3 group">
+            {/* Right Card / Visual */}
+<div className="lg:col-span-5 lg:translate-y-10">
+  <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950 p-2 sm:p-3 group">
                 <img 
                   src={vadesImage} 
                   alt="Vades Group Manufacturing & Card Production" 

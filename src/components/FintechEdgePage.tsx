@@ -8,8 +8,9 @@ import {
   TrendingUp, BarChart2, DollarSign, Wallet, Send, UserCheck, Briefcase
 } from 'lucide-react';
 import { COMPANIES } from '../data/mockData';
-import fintechImage from "../assets/company-images/fintech_edge_institutes_image.jpg";
+// import fintechImage from "../assets/company-images/fintech_edge_institutes_image.jpg";
 import fintechVideo from "../assets/company-videos/fintech-edge-video.mp4";
+import coverImage from "../assets/images/fintech-cover.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -299,13 +300,7 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
       {/* 1. Sub-Header Navigation Banner */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Ecosystem</span>
-          </button>
+          
 
           {/* Quick Info Badge */}
           <div className="hidden md:flex items-center gap-3 text-xs font-semibold text-slate-600">
@@ -344,11 +339,22 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
       {/* 2. Hero Section */}
       <section className="relative pt-12 pb-20 overflow-hidden bg-slate-950 text-white">
         {/* Ambient Glows */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" /> */}
         
         {/* Background Grid Lines */}
-        <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" /> */}
+
+        {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={coverImage}
+            alt="FinTech Edge Institute"
+            className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
+          />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -439,11 +445,7 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
             >
               <div className="relative rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl group">
                 <div className="relative aspect-[4/3] bg-slate-950 overflow-hidden">
-                  <img
-                    src={fintechImage}
-                    alt="FinTech Edge Institute"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                 
                   {fintechVideo && (
                     <video
                       src={fintechVideo}
@@ -456,11 +458,7 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
 
-                  {/* Badge Overlay */}
-                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-xs font-bold text-white flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-                    <span>ezycourse Learning Engine</span>
-                  </div>
+                 
                 </div>
 
                 {/* Card Summary Details */}

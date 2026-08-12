@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { COMPANIES } from '../data/mockData';
 import artelImage from "../assets/company-images/artel-image-1.png";
+import coverImage from "../assets/images/artel-cover.png";
 
 // Animated Counter component that starts counting when scrolled into view
 interface AnimatedStatNumberProps {
@@ -154,28 +155,8 @@ export const ArtelServicesPage: React.FC<ArtelServicesPageProps> = ({
       {/* Top Header Breadcrumb Bar */}
       <div className="bg-white/90 border-b border-orange-100 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
-          <button
-            onClick={onBackToHome}
-            className="flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-[#FF6B00] transition-colors cursor-pointer group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-[#FF6B00]" />
-            <span>Back to TOP GROUP Ecosystem</span>
-          </button>
-
-          <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100/80 border border-orange-200 text-[#FF6B00] text-[11px] font-extrabold uppercase tracking-wider">
-              <Building2 className="w-3.5 h-3.5" /> Central Asia Electronics Leader
-            </span>
-            <a
-              href="https://artelelectronics.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-orange-600 text-white font-extrabold text-xs flex items-center gap-1.5 transition-all shadow-md hover:shadow-orange-500/20"
-            >
-              <span>Visit Official Site</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
+          
+          
         </div>
       </div>
 
@@ -184,7 +165,7 @@ export const ArtelServicesPage: React.FC<ArtelServicesPageProps> = ({
         {/* Clear Background Image with Light Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src={artelImage}
+            src={coverImage}
             alt="Artel Electronics Manufacturing Facility"
             className="w-full h-full object-cover object-center filter brightness-95"
           />

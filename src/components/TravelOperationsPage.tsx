@@ -7,6 +7,7 @@ import {
   ExternalLink, Building2
 } from 'lucide-react';
 import travelImage from "../assets/company-images/traveloperations-image.jpg";
+import coverImage from "../assets/images/travel-cover.png";
 
 // Animated Counter component
 interface AnimatedStatNumberProps {
@@ -130,7 +131,7 @@ export const TravelOperationsPage: React.FC<TravelOperationsPageProps> = ({
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={travelImage} 
+            src={coverImage} 
             alt="Travel Operations Background" 
             className="w-full h-full object-cover object-center filter brightness-[0.8] scale-105"
           />

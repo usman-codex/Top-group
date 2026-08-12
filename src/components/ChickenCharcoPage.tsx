@@ -9,6 +9,7 @@ import {
 import chickenCharcoMain from '../assets/images/chicken-charco-image.png';
 import chickenCharco1 from '../assets/images/chicken-charco-image1.png';
 import chickenCharco2 from '../assets/images/chicken-charco-image2.png';
+import coverImage from "../assets/images/chicken-charco-cover.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -180,21 +181,26 @@ export const ChickenCharcoPage: React.FC<ChickenCharcoPageProps> = ({
       
       {/* HERO SECTION — WHITE & ORANGE THEME WITH CENTERED HERO TEXT */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-orange-50/90 via-white to-amber-50/40 text-slate-800 overflow-hidden border-b border-orange-100">
-        {/* Ambient Glows */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-gradient-to-tr from-orange-200/40 via-amber-100/50 to-orange-300/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 -right-20 w-80 h-80 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.12] pointer-events-none" />
+      
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={coverImage} 
+            alt="PSA Uzbekistan Background" 
+            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.85]"
+          />
+         
+        </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/90 border border-orange-200 text-[#FF6B00] text-xs font-black uppercase tracking-widest shadow-xs">
             TOP GROUP ECOSYSTEM • HOSPITALITY & F&B
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black text-[#1B365D] tracking-tight font-heading leading-tight mx-auto text-center">
+          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight font-heading leading-tight mx-auto text-center">
             Chicken Charco
           </h1>
 
-          <p className="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed text-center mx-auto max-w-3xl">
+          <p className="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed text-center text-white mx-auto max-w-3xl">
             Turkish Charcoal-Grilled Culinary Excellence & Modern F&B Operations. Bringing authentic wood-charcoal flavors, farm-to-table freshness, and automated kitchen workflows to international markets.
           </p>
 
