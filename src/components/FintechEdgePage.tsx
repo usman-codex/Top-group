@@ -300,41 +300,7 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 font-sans antialiased">
       {/* 1. Sub-Header Navigation Banner */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs px-4 py-3">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-          
-
-          {/* Quick Info Badge */}
-          <div className="hidden md:flex items-center gap-3 text-xs font-semibold text-slate-600">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Lahore Institute & Software House</span>
-            </span>
-            <span className="text-slate-300">•</span>
-            <span className="flex items-center gap-1 text-[#FF6B00] font-bold">
-              <GraduationCap className="w-4 h-4" /> 14,000+ Alumni Certified
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setAppointmentOpen(true)}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-white bg-[#1B365D] hover:bg-slate-800 transition-all shadow-xs flex items-center gap-1.5"
-            >
-              <Calendar className="w-3.5 h-3.5 text-orange-400" />
-              <span>Book Appointment</span>
-            </button>
-
-            <a
-              href="https://fintechedgeinstitute.ezycourse.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-white bg-[#FF6B00] hover:bg-orange-600 transition-all shadow-xs flex items-center gap-1.5"
-            >
-              <span>View Live Project</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
+        
       </div>
 
       {/* 2. Hero Section */}
