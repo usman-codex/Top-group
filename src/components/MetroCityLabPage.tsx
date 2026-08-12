@@ -9,6 +9,7 @@ import {
 import metroImage from '../assets/company-images/metro-city-lab.jpg';
 import metroLogo from '../assets/images/company-logos/metrolab-logo.png';
 import coverImage from "../assets/images/metrolab-img.png";
+import coverImageMobile from "../assets/images/metro-mob.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -180,22 +181,19 @@ export const MetroCityLabPage: React.FC<MetroCityLabPageProps> = ({
       
       {/* HERO SECTION — WHITE & ORANGE THEME WITH CENTERED HERO TEXT */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-orange-50/90 via-white to-amber-50/40 text-slate-800 overflow-hidden border-b border-orange-100">
-        {/* Ambient Glows */}
-        {/* <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-gradient-to-tr from-orange-200/40 via-amber-100/50 to-orange-300/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 -right-20 w-80 h-80 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.12] pointer-events-none" /> */}
+       
 
-
-        {/* Background Image Container */}
+       {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={coverImage} 
-            alt="Metro City Lab Background" 
-            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.85]"
-          />
-          {/* Overlay Gradient: Deep dark indigo/navy with warm white-orange tint */}
-         {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || coverImage} />
+            <img 
+              src={coverImage} 
+              alt="Metro City Lab" 
+              className="w-full h-full object-cover object-center filter brightness-[0.9]"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">

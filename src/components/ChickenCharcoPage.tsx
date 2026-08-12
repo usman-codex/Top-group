@@ -10,6 +10,7 @@ import chickenCharcoMain from '../assets/images/chicken-charco-image.png';
 import chickenCharco1 from '../assets/images/chicken-charco-image1.png';
 import chickenCharco2 from '../assets/images/chicken-charco-image2.png';
 import coverImage from "../assets/images/chicken-charco-cover.png";
+import coverImageMobile from "../assets/images/chicken-mob.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -182,13 +183,16 @@ export const ChickenCharcoPage: React.FC<ChickenCharcoPageProps> = ({
       {/* HERO SECTION — WHITE & ORANGE THEME WITH CENTERED HERO TEXT */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-orange-50/90 via-white to-amber-50/40 text-slate-800 overflow-hidden border-b border-orange-100">
       
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={coverImage} 
-            alt="PSA Uzbekistan Background" 
-            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.85]"
-          />
-         
+         <div className="absolute inset-0 z-0">
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || coverImage} />
+            <img 
+              src={coverImage} 
+              alt="Chicken Charco Background" 
+              className="w-full h-full object-cover object-center filter brightness-[0.85]"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">

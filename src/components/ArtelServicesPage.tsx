@@ -8,6 +8,7 @@ import {
 import { COMPANIES } from '../data/mockData';
 import artelImage from "../assets/company-images/artel-image-1.png";
 import coverImage from "../assets/images/artel-cover.png";
+import coverImageMobile from "../assets/images/artel-mob.png";
 
 // Animated Counter component that starts counting when scrolled into view
 interface AnimatedStatNumberProps {
@@ -163,16 +164,17 @@ export const ArtelServicesPage: React.FC<ArtelServicesPageProps> = ({
       {/* 1. Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20">
         {/* Clear Background Image with Light Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={coverImage}
-            alt="Artel Electronics Manufacturing Facility"
-            className="w-full h-full object-cover object-center filter brightness-95"
-          />
-          {/* Subtle gradient overlay for clean text legibility without blocking the background image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30" />
+         <div className="absolute inset-0 z-0">
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || coverImage} />
+            <img
+              src={coverImage}
+              alt="Artel Electronics Manufacturing Facility"
+              className="w-full h-full object-cover object-center filter brightness-95"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/65 sm:bg-slate-950/55" />
         </div>
-
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center flex flex-col items-center space-y-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

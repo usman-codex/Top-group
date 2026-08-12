@@ -11,6 +11,7 @@ import { COMPANIES } from '../data/mockData';
 // import fintechImage from "../assets/company-images/fintech_edge_institutes_image.jpg";
 import fintechVideo from "../assets/company-videos/fintech-edge-video.mp4";
 import coverImage from "../assets/images/fintech-cover.png";
+import coverImageMobile from "../assets/images/fintech-mob.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -338,23 +339,19 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
 
       {/* 2. Hero Section */}
       <section className="relative pt-12 pb-20 overflow-hidden bg-slate-950 text-white">
-        {/* Ambient Glows */}
-        {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" /> */}
-        
-        {/* Background Grid Lines */}
-        {/* <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" /> */}
-
-        {/* Background Image with Gradient Overlay */}
+      {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={coverImage}
-            alt="FinTech Edge Institute"
-            className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
-          />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
-          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || coverImage} />
+            <img
+              src={coverImage}
+              alt="FinTech Edge Institute"
+              className="w-full h-full object-cover object-center"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
+        
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

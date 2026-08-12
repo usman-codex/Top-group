@@ -11,6 +11,7 @@ import {
 import { COMPANIES } from '../data/mockData';
 import pakcisImage from "../assets/images/pakcis-image.png";
 import pakcisVideo from "../assets/company-videos/pakcis-video.mp4";
+import pakcisImageMobile from "../assets/images/pakcis-mob.png";
 
 // Animated Counter component that starts from 0 when scrolled into view
 interface AnimatedStatNumberProps {
@@ -281,15 +282,17 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
       {/* 1. HERO SECTION WITH IMAGE BACKGROUND */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         
-        {/* Background Image with Gradient Overlay */}
+        {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={pakcisImage}
-            alt="PakCisTrade Eurasia Logistics"
-            className="w-full h-full object-cover object-[center_40%] opacity-40"
-          />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
-          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={pakcisImageMobile || pakcisImage} />
+            <img
+              src={pakcisImage}
+              alt="PakCisTrade Eurasia Logistics"
+              className="w-full h-full object-cover object-center"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/65 sm:bg-slate-950/55" />
         </div>
 
         {/* Hero Content */}

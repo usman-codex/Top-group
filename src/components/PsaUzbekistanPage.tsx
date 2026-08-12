@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { COMPANIES } from '../data/mockData';
 import psaImage from "../assets/company-images/psa-uzbekistan.jpg";
+import coverImageMobile from "../assets/images/psa-mob.png";
 
 // Animated Counter component that starts counting when scrolled into view
 interface AnimatedStatNumberProps {
@@ -158,18 +159,18 @@ export const PsaUzbekistanPage: React.FC<PsaUzbekistanPageProps> = ({
       
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center justify-center overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        {/* Background Image Container */}
+       {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={psaImage} 
-            alt="PSA Uzbekistan Background" 
-            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.85]"
-          />
-          {/* Overlay Gradient: Deep dark indigo/navy with warm white-orange tint */}
-         <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" />
-          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || psaImage} />
+            <img 
+              src={psaImage} 
+              alt="PSA Uzbekistan Background" 
+              className="w-full h-full object-cover object-center filter brightness-[0.85]"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
-
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

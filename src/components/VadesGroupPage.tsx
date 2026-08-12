@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import vadesImage from "../assets/company-images/vade-image.png";
 import coverImage from "../assets/images/vades-cover.png";
+import coverImageMobile from "../assets/images/vades-mob.png";
 
 interface AnimatedNumberProps {
   end: number;
@@ -194,15 +195,17 @@ export const VadesGroupPage: React.FC<VadesGroupPageProps> = ({
         {/* Background Grid Accent */}
         {/* <div className="absolute inset-0 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" /> */}
 
-         {/* Background Image with Gradient Overlay */}
+         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={coverImage}
-            alt="Vades Group Manufacturing & Card Production"
-            className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
-          />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" /> */}
-          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
+          <picture className="w-full h-full block">
+            <source media="(max-width: 767px)" srcSet={coverImageMobile || coverImage} />
+            <img
+              src={coverImage}
+              alt="Vades Group Manufacturing & Card Production"
+              className="w-full h-full object-cover object-center filter brightness-[0.85]"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
