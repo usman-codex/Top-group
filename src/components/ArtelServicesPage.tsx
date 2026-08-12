@@ -200,7 +200,7 @@ export const ArtelServicesPage: React.FC<ArtelServicesPageProps> = ({
             className="flex flex-col items-center space-y-6 text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-400 text-xs font-extrabold uppercase tracking-widest backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" />
+              
               <span>Central Asian Manufacturing Powerhouse</span>
             </div>
 

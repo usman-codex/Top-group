@@ -288,8 +288,8 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
             alt="PakCisTrade Eurasia Logistics"
             className="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-subtle"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-[#1B365D]/70 to-slate-950/90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/95 via-[#1B365D]/80 to-slate-900/70" />
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.18),transparent_70%)]" /> */}
         </div>
 
         {/* Hero Content */}
@@ -483,7 +483,7 @@ export const PakCisTradePage: React.FC<PakCisTradePageProps> = ({
 
                   <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-between">
                     <span>Target Trade Potential</span>
-                    <strong className="text-[#FF6B00] font-bold">$700 Billion+ (2030)</strong>
+                    <strong className="text-[#FF6B00] font-bold">$3.5 Billion+ (2030)</strong>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-between">
