@@ -300,7 +300,41 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 font-sans antialiased">
       {/* 1. Sub-Header Navigation Banner */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs px-4 py-3">
-        
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+          
+
+          {/* Quick Info Badge */}
+          <div className="hidden md:flex items-center gap-3 text-xs font-semibold text-slate-600">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Lahore Institute & Software House</span>
+            </span>
+            <span className="text-slate-300">•</span>
+            <span className="flex items-center gap-1 text-[#FF6B00] font-bold">
+              <GraduationCap className="w-4 h-4" /> 14,000+ Alumni Certified
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setAppointmentOpen(true)}
+              className="px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-white bg-[#1B365D] hover:bg-slate-800 transition-all shadow-xs flex items-center gap-1.5"
+            >
+              <Calendar className="w-3.5 h-3.5 text-orange-400" />
+              <span>Book Appointment</span>
+            </button>
+
+            <a
+              href="https://fintechedgeinstitute.ezycourse.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-white bg-[#FF6B00] hover:bg-orange-600 transition-all shadow-xs flex items-center gap-1.5"
+            >
+              <span>View Live Project</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* 2. Hero Section */}
@@ -315,134 +349,78 @@ export const FintechEdgePage: React.FC<FintechEdgePageProps> = ({
               className="w-full h-full object-cover object-center"
             />
           </picture>
+
           <div className="absolute inset-0 bg-slate-950/70 sm:bg-slate-950/60" />
         </div>
         
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content Column */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-7 space-y-6"
-            >
-              {/* Badges */}
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                  <GraduationCap className="w-3.5 h-3.5" /> Education / EdTech
-                </span>
-                <span className="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5" /> Lahore, Pakistan
-                </span>
-              </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center py-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center text-center space-y-6"
+          >
+            {/* Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 backdrop-blur-md">
+                <GraduationCap className="w-3.5 h-3.5" /> Education / EdTech
+              </span>
+              <span className="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 backdrop-blur-md">
+                <MapPin className="w-3.5 h-3.5" /> Lahore, Pakistan
+              </span>
+            </div>
 
-              {/* Title & One-Liner */}
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-white leading-tight">
-                  FinTech Edge <span className="text-[#FF6B00]">Institute</span>
-                </h1>
-                <p className="text-xl sm:text-2xl font-bold text-slate-200 font-heading">
-                  {compData.tagline}
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-                {compData.description}
+            {/* Title & One-Liner */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-white leading-tight">
+                FinTech Edge <span className="text-[#FF6B00]">Institute</span>
+              </h1>
+              <p className="text-xl sm:text-2xl font-bold text-slate-200 font-heading">
+                {compData.tagline}
               </p>
+            </div>
 
-              {/* Tags Ribbon */}
-              <div className="flex flex-wrap items-center gap-2 pt-1">
-                {['EdTech', 'Web3', 'FinTech', 'Course Platform', 'Responsive Design', 'Lahore Hub'].map(tag => (
-                  <span key={tag} className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 text-xs font-medium">
-                    #{tag}
-                  </span>
-                ))}
+            {/* Description */}
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl font-normal mx-auto">
+              {compData.description}
+            </p>
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://fintechedgeinstitute.ezycourse.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-xl font-extrabold text-sm text-white bg-[#FF6B00] hover:bg-orange-600 transition-all shadow-xl hover:shadow-orange-500/25 flex items-center gap-2 group cursor-pointer"
+              >
+                <span>View Live Platform</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+
+            {/* Quick Metrics Ribbon */}
+            <div className="mt-4 pt-6 border-t border-white/15 grid grid-cols-3 gap-6 text-center max-w-2xl w-full bg-slate-900/80 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                  <AnimatedNumber end={14000} suffix="+" />
+                </div>
+                <div className="text-xs font-medium text-slate-300">Certified Alumni</div>
               </div>
-
-              {/* CTAs */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <a
-                  href="https://fintechedgeinstitute.ezycourse.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl font-extrabold text-sm text-white bg-[#FF6B00] hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/25 flex items-center gap-2 group cursor-pointer"
-                >
-                  <span>View Live Platform</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#FF6B00] font-heading">
+                  <AnimatedNumber end={65} suffix="+" />
+                </div>
+                <div className="text-xs font-medium text-slate-300">Corporate Partners</div>
               </div>
-
-              {/* Quick Metrics Ribbon */}
-              <div className="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center sm:text-left">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                    <AnimatedNumber end={14000} suffix="+" />
-                  </div>
-                  <div className="text-xs font-medium text-slate-400">Certified Alumni</div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-heading">
+                  <AnimatedNumber end={94} suffix="%" />
                 </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-[#FF6B00] font-heading">
-                    <AnimatedNumber end={65} suffix="+" />
-                  </div>
-                  <div className="text-xs font-medium text-slate-400">Corporate Partners</div>
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-heading">
-                    <AnimatedNumber end={94} suffix="%" />
-                  </div>
-                  <div className="text-xs font-medium text-slate-400">Job Placement</div>
-                </div>
+                <div className="text-xs font-medium text-slate-300">Job Placement</div>
               </div>
-            </motion.div>
-
-            {/* Right Media Card Column */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-5"
-            >
-              <div className="relative rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl group">
-                <div className="relative aspect-[4/3] bg-slate-950 overflow-hidden">
-                 
-                  {fintechVideo && (
-                    <video
-                      src={fintechVideo}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
-
-                 
-                </div>
-
-                {/* Card Summary Details */}
-                <div className="p-6 space-y-4 bg-slate-900/90 backdrop-blur-md border-t border-slate-800">
-                  <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-orange-400" /> Lahore, Pakistan
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Award className="w-3.5 h-3.5 text-blue-400" /> TOP GROUP Ecosystem
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Offering self-paced bundles, 1-on-1 mentorship, live code review labs, and accredited blockchain certifications.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
