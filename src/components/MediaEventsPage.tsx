@@ -312,14 +312,11 @@ export const MediaEventsPage: React.FC<MediaEventsPageProps> = ({
             alt="Corporate Events Background" 
             className="w-full h-full object-cover object-center opacity-30 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60" />
+        
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80" />
         </div>
 
-        {/* Background Beams & Animated Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-5 pointer-events-none" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#FF6B00]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 -left-24 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+     
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -389,76 +386,7 @@ export const MediaEventsPage: React.FC<MediaEventsPageProps> = ({
         </div>
       </section>
 
-      {/* 3. FEATURED HIGHLIGHTS (Bento Grid) */}
-      <section className="pt-16 pb-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="inline-block text-xs font-extrabold text-[#FF6B00] uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 mb-5 shadow-xs">
-              FEATURED MOMENTS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
-              A Glimpse Into Our Most Impactful Milestones
-            </h2>
-            <p className="text-base text-slate-600 font-medium">
-              A glimpse into the most impactful events, partnerships, and milestones that continue to shape the future of Top Group.
-            </p>
-          </div>
-
-          {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {bentoHighlights.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={() => {
-                  const ev = EXPANDED_MEDIA_EVENTS.find(e => e.id === item.id);
-                  if (ev) onSelectEvent(ev);
-                }}
-                className={`group relative rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#FF6B00] shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer min-h-[320px] flex flex-col justify-end p-6 ${item.size}`}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
-
-                <div className="relative z-10 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-sm">
-                      {item.category}
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white backdrop-blur-md">
-                      {item.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl sm:text-2xl font-bold text-white font-heading group-hover:text-orange-300 transition-colors leading-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-300 font-normal line-clamp-2">
-                    {item.desc}
-                  </p>
-
-                  <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80">
-                    <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#FF6B00]" /> {item.date}</span>
-                    <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#FF6B00]" /> {item.location}</span>
-                    <span className="text-[#FF6B00] font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      View Story <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+   
 
       {/* 4. MEDIA GALLERY (Main Section) */}
       <section id="media-gallery-section" className="pt-16 pb-24 bg-gradient-to-b from-[#FFF8F2] via-[#FFF4E8] to-[#FFF8F2] relative border-t border-orange-200/60">
@@ -561,75 +489,7 @@ export const MediaEventsPage: React.FC<MediaEventsPageProps> = ({
         </div>
       </section>
 
-      {/* 5. VIDEO HIGHLIGHTS */}
-      <section className="pt-16 pb-24 bg-[#0F172A] text-white relative border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="inline-block text-xs font-extrabold text-[#FF6B00] uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 mb-5 shadow-xs">
-              EVENT HIGHLIGHTS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-4">
-              Watch Key Event Highlights
-            </h2>
-            <p className="text-base text-slate-400 font-medium">
-              Experience Top Group's journey through immersive event videos showcasing our partnerships, conferences, and global initiatives.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {videos.map((vid, idx) => (
-              <motion.div
-                key={vid.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={onOpenVideo}
-                className="group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-[#FF6B00] transition-all duration-300 shadow-xl cursor-pointer"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={vid.thumbnail}
-                    alt={vid.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors" />
-
-                  {/* Play Button Pulsing Ring */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-[#FF6B00] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform relative">
-                      <span className="absolute inset-0 rounded-full bg-[#FF6B00]/40 animate-ping" />
-                      <Play className="w-6 h-6 fill-current ml-1 relative z-10" />
-                    </div>
-                  </div>
-
-                  <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-slate-950/80 text-white backdrop-blur-md border border-slate-800 flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-[#FF6B00]" /> {vid.duration}
-                  </span>
-
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md">
-                    {vid.category}
-                  </span>
-                </div>
-
-                <div className="p-5 space-y-2">
-                  <h3 className="text-base font-bold text-white font-heading group-hover:text-[#FF6B00] transition-colors leading-snug">
-                    {vid.title}
-                  </h3>
-                  <div className="text-xs text-slate-400 flex items-center justify-between pt-1">
-                    <span>Click to play HD video</span>
-                    <span className="text-[#FF6B00] font-bold flex items-center gap-1">Watch Now <ArrowRight className="w-3.5 h-3.5" /></span>
-                  </div>
-                </div>
-
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
+   
       {/* 6. CERTIFICATIONS & RECOGNITIONS */}
       <section className="pt-16 pb-24 bg-white relative border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
