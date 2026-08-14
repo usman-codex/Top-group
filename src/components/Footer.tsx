@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onSelectCompany, 
         {/* Bottom Bar & Back to Top */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} TOP GROUP Enterprise Ecosystem. All rights reserved.
+            © {new Date().getFullYear()} TOP GROUP. All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">
