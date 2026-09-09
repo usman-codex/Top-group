@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({
                 font-heading
               "
             >
-              Group of{' '}
+             TOP Group of{' '}
 
               <span className="text-[#FF6B00] relative inline-block">
 
