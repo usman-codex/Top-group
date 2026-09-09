@@ -379,20 +379,20 @@ export const MEDIA_EVENTS: MediaEvent[] = [
   },
   {
     id: 'm2',
-    slug: 'uzbekistan-delegation-official-visit-2026',
-    title: 'Uzbekistan Delegation Official Visit',
+    slug: 'Kyrgyzstan-delegation-official-visit-2026',
+    title: 'Kyrgyzstan Delegation Official Visit',
     category: 'International Collaboration',
     date: 'June 14, 2026',
     location: 'TOP GROUP Office, Lahore',
-    shortDesc:  'TOP GROUP welcomed a delegation from Uzbekistan during an official visit focused on exploring business opportunities, ongoing projects, and future collaboration between Pakistan and Uzbekistan.',
+    shortDesc:  'TOP GROUP welcomed a delegation from Kyrgyzstan during an official visit focused on exploring business opportunities, ongoing projects, and future collaboration between Pakistan and Kyrgyzstan.',
 
-    fullStory:  'TOP GROUP had the pleasure of welcoming a delegation from Uzbekistan to its Lahore office. The visit provided an opportunity for the delegation to meet with the TOP GROUP team, explore our ongoing projects, and learn more about our diverse group of companies and services. The meeting also focused on identifying potential areas of cooperation and developing stronger business relationships between Pakistan and Uzbekistan. The delegation was warmly welcomed by the team, marking another step toward building meaningful international partnerships.',
+    fullStory:  'TOP GROUP had the pleasure of welcoming a delegation from Kyrgyzstan to its Lahore office. The visit provided an opportunity for the delegation to meet with the TOP GROUP team, explore our ongoing projects, and learn more about our diverse group of companies and services. The meeting also focused on identifying potential areas of cooperation and developing stronger business relationships between Pakistan and Kyrgyzstan. The delegation was warmly welcomed by the team, marking another step toward building meaningful international partnerships.',
 
     coverImage: uzbedelvisit,
     galleryImages: [
       uzbedelvisit1,],
     keyGuests: [
-    'Uzbekistan Delegation Members',
+    'Kyrgyzstan Delegation Members',
     'TOP GROUP Management',
     'Project & Business Development Team'
   ],
