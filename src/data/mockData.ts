@@ -357,13 +357,13 @@ export const SERVICES: ServiceItem[] = [
 export const MEDIA_EVENTS: MediaEvent[] = [
   {
     id: 'm1',
-    slug: 'uzbekistan-delegation-project-visit',
+    slug: 'Kyrgyzstan-delegation-project-visit',
     title: 'International Collaboration & Project Visit',
     category: 'International Collaboration',
     date: 'June 14, 2026',
     location: 'Fintech Edge Institue, Lahore',
-    shortDesc: 'Delegates from Uzbekistan visited our office to explore our ongoing projects, discuss potential collaboration opportunities, and strengthen professional relations between Pakistan and Uzbekistan.',
-    fullStory: 'TOP GROUP was pleased to welcome a delegation from Uzbekistan to our Lahore office. During the visit, the delegation explored our ongoing projects and interacted with our team to gain insights into our operations, capabilities, and areas of expertise. The meeting also provided an opportunity to discuss potential collaborations and future business opportunities.',
+    shortDesc: 'Delegates from Kyrgyzstan visited our office to explore our ongoing projects, discuss potential collaboration opportunities, and strengthen professional relations between Pakistan and Kyrgyzstan.',
+    fullStory: 'TOP GROUP was pleased to welcome a delegation from Kyrgyzstan to our Lahore office. During the visit, the delegation explored our ongoing projects and interacted with our team to gain insights into our operations, capabilities, and areas of expertise. The meeting also provided an opportunity to discuss potential collaborations and future business opportunities.',
 
      coverImage: uzbekistanDelVisit,
     galleryImages: [
