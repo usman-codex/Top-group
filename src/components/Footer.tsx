@@ -134,20 +134,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onSelectCompany, 
             </ul>
           </div>
 
-          {/* Col 6: Contact & Global HQs */}
+          {/* Col 6: Contact & Regional HQs */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-400 font-heading">Global HQ</h4>
-            <div className="text-slate-300 space-y-1">
-              <div>Tashkent, Uzbekistan</div>
-              <div>Dubai, UAE</div>
-              <div>London, UK</div>
-              <div className="text-[#FF6B00] font-bold pt-1">+998 (71) 200-8800</div>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#FF6B00] font-heading">Headquarters & Desk</h4>
+            <div className="text-slate-300 space-y-1.5 text-xs">
+              <div className="font-semibold text-white">40, Block 1, Sector B1, Township, Lahore</div>
+              <div className="text-slate-400 text-[11px]">Global Corridors: Tashkent • Dubai • London</div>
+              <div className="pt-1">
+                <a href="tel:03110911114" className="text-[#FF6B00] font-bold block hover:underline">
+                  0311 0911114
+                </a>
+                <a href="mailto:info@tech.topgroup.pk" className="text-slate-300 hover:text-white block text-[11px] hover:underline break-all">
+                  info@tech.topgroup.pk
+                </a>
+              </div>
             </div>
             <button
               onClick={onOpenContact}
-              className="mt-2 w-full py-2 rounded-lg bg-slate-800 hover:bg-[#FF6B00] text-white font-bold transition-all text-[11px]"
+              className="mt-2 w-full py-2 rounded-lg bg-slate-800 hover:bg-[#FF6B00] text-white font-bold transition-all text-[11px] cursor-pointer"
             >
-              Contact Board
+              Contact Advisory Board
             </button>
           </div>
 
