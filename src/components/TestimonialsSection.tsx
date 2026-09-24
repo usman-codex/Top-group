@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Star, Quote, Play, CheckCircle } from 'lucide-react';
+import { Star, Quote, CheckCircle } from 'lucide-react';
 import { TESTIMONIALS } from '../data/mockData';
 
 interface TestimonialsSectionProps {
-  onOpenVideo: () => void;
+  onOpenVideo?: () => void;
 }
 
-export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpenVideo }) => {
+export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
   return (
     <section className="py-24 bg-[#FFF5EB] relative overflow-hidden border-t border-orange-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,16 +60,6 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                     <p className="text-[10px] font-bold text-[#FF6B00]">{t.company}</p>
                   </div>
                 </div>
-
-                {t.hasVideo && (
-                  <button
-                    onClick={onOpenVideo}
-                    className="p-2.5 rounded-full bg-orange-50 hover:bg-[#FF6B00] text-[#FF6B00] hover:text-white border border-orange-200 transition-all cursor-pointer shadow-sm"
-                    title="Play Video Review"
-                  >
-                    <Play className="w-4 h-4 fill-current" />
-                  </button>
-                )}
               </div>
             </motion.div>
           ))}
