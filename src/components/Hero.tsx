@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import heroBgImage from '../images/topgroup-hero.jpeg';
+import heroBgImage from '../assets/images/topgroup-hero.jpeg';
 
 interface HeroProps {
   onOpenContact: () => void;
